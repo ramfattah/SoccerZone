@@ -25,7 +25,7 @@ SECRET_KEY = '3$xfaxzl0gh3l4_tv*r5ujami%m-l0@yo)m6hp2eq3c55c(k-!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['foothubfc.herokuapp.com']
 
 
 # Application definition
