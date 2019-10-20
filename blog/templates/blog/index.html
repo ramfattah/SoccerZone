@@ -1,62 +1,62 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+  {% load static %}
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+      <title>Welcome to FootHub FC</title>
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+      />
 
-  <title>Welcome to FootHub FC</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script
+        src="https://kit.fontawesome.com/282e6ec7ef.js"
+        crossorigin="anonymous"
+      ></script>
 
-  <script src="https://kit.fontawesome.com/282e6ec7ef.js" crossorigin="anonymous"></script>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'blog/main.css' %}"
+      />
+    </head>
 
-  <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <body id="page-top">
+      <div class="container">
+        <div class="mt-5 mb-5">
+          <a href="{% url 'index-home' %}">
+          <h1 class="head-text text-dark brand-text text-center">FootHub-FC <br>
+          
+              <img
+              src="/media/float.png"
+              class="float-right d-block floating"
+              style="height: 40px; width: 40px;"
+              alt=""
+            />
+          </h1>
+        </a>
 
-</head>
-
-<body id="page-top">
-
-
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'index-home' %}">Home</a>
-            </li>      
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'first-home' %}">Highlights</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Statistics <small class="text-muted"> comming soon</small></a>
-            </li>
-            
-        </ul>
-    </div>
-    <div class="mx-auto order-0">
-        <a class="navbar-brand mx-auto" href="{% url 'index-home' %}">FootHub-FC</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-            {% if user.is_authenticated %}
+        </div>
+          <!-- <h6 class="mt-5">{% now "jS \o\f F" %}</h6> -->
+          <ul class="nav justify-content-center">
               <li class="nav-item">
-                  <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                <a class="nav-link text-secondary" href="{% url 'blog-about' %}">About</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-              </li>
-            {% else %}
-              <li class="nav-item">              
-                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-link text-secondary" href="#">Note</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="{% url 'register' %}">Register</a>
+                <p class="nav-link text-dark float-right" href="#">{% now "jS F Y" %}</p>
               </li>
             {% endif %}
         </ul>
@@ -72,37 +72,38 @@
 
       
 
-        <!-- Begin Page Content -->
-        <div class="row ml-5">
-
-          {% block content %}{% endblock %}
-
-      </div>
       
+      <br />
+      <br />
+      <br />
+      <br />
 
-  
-  
-  </div>
-  <!-- End of Page Wrapper -->
-
-
-  <!-- Footer -->
-  <footer class="sticky-footer">
-      <div class="d-flex justify-content-center">
-        <div class="copyright text-center ">
-          <span>Copyright &copy; FootHub FC {% now 'Y' %}</span>
-        </div>
+      <!-- Begin Page Content -->
+      <div class="row ml-5">
+        {% block content %}{% endblock %}
       </div>
-    </footer>
-    <!-- End of Footer -->
 
 
-     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-</body>
-
-</html>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+      ></script>
+    </body>
+  </html>
