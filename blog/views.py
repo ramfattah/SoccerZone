@@ -56,7 +56,7 @@ def home(request):
         'user': request.user
     }
 
-    return render(request, 'blog/home.html', context)
+    return render(request, 'blog/index.html', context)
 
 
 def index(request):

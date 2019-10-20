@@ -3,89 +3,19 @@
 
 
 
-<!-- <h3 class="mb-5 mt-5 highlights-text text-uppercase text-dark text-center">Top Players around the World!</h3>
-
-<div class="row mt-5">
-
-
-
-  <div class="col-xl-3 col-md-6 mb-4 ">
-      <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="h5 mb-1 font-weight-bold text-gray-800">{{names.player.name}}</div>
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{ names.team.name }}</div>
-              <div class="text-sm font-weight-bold text-primary text-uppercase mb-1">La Liga</div>
-            </div>
-            <div class="col-auto">
-              <h1>{{ names.numberOfGoals }} <small class="text-xs text-primary">GOALS</small></h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-     <div class="col-xl-3 col-md-6 mb-4 ">
-        <div class="card border-left-primary shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                  <div class="h5 mb-1 font-weight-bold text-gray-800">{{prem_names.player.name}}</div>
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{ prem_names.team.name }}</div>
-                  <div class="text-sm font-weight-bold text-primary text-uppercase mb-1">Premier League</div>
-              </div>
-              <div class="col-auto">
-                <h1>{{ prem_names.numberOfGoals }} <small class="text-xs text-primary">GOALS</small></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-xl-3 col-md-6 mb-4 ">
-        <div class="card border-left-primary shadow h-100 py-2">
-          <div class="card-body">
-            <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                  <div class="h5 mb-1 font-weight-bold text-gray-800">{{lig_names.player.name}}</div>
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{ lig_names.team.name }}</div>
-                  <div class="text-sm font-weight-bold text-primary text-uppercase mb-1">France Ligue 1</div>
-             </div>
-              <div class="col-auto">
-                <h1>{{ lig_names.numberOfGoals }} <small class="text-xs text-primary">GOALS</small></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-   
-    </div>
-
-
-  
-
-  <div class="row mt-5" class="shine"> -->
-    <div class="container">     
-       <h3 class="mb-5 mt-5 highlights-text text-uppercase text-dark text-center">Recent matches around the World!</h3>
-      </div>
       {% for b in bat|slice:'20' %}
-          <div class=" rekick card-match mr-3 mb-3">
+          <div class=" rekick card-match mr-4 mb-4">
             <a href="{{ b.url }}" target="_blank" class="card-link">
               <div class="card shadow h-100  bg-gray-300">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-sm text-dark text-uppercase mb-1">{{ b.competition.name }}</div>
+                      <div class="text-sm text-secondary text-uppercase mb-1">{{ b.competition.name }}</div>
                       <div class="h3 mb-0 text-dark mb-5">{{b.title}}</div>
-                      <small class="text-dark">{{ v|date:"D d M Y" }}</small>
                     </div>
 
                     <div class="col-auto">
-                      <i class="fas fa-eye fa-2x text-gray-300"></i>
+                      <i class="fas fa-eye fa-2x text-gray-300 ml-2"></i>
                     </div>
                   </div>
                 </div>

@@ -10,8 +10,8 @@ from .views import (
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='index-home'),
-    path('highlights/', views.frist_home, name='first-home'),
+    path('', views.frist_home, name='index-home'),
+    # path('highlights/', views.frist_home, name='first-home'),
     path('welcome/', PostListView.as_view(), name='blog-home'),
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
