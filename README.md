@@ -17,7 +17,7 @@ make changes to requirements.txt, settings.py, and any app code that
 you want cached. These changes are covered in detail below.
 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)
+![Deploy](https://www.herokucdn.com/deploy/button.png)
 
 ## Building
 
