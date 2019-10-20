@@ -1,9 +1,6 @@
-# FootHub-FC
-Soccer replay website - Catching up with today's football 
-
-# [soccer replay](https://social-app-82b10.firebaseapp.com)
+# [FootHub-FC](https://foothubfc.herokuapp.com)
 🚀🚀🚀🚀🚀🚀🚀
 
-### Watch today's latest international football highlights from every league around the world. 
+# Watch today's latest international football highlights from every league around the world. 
 
 ⚽⚽⚽⚽⚽⚽⚽⚽
