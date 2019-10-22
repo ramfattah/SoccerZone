@@ -9,24 +9,6 @@ import dateutil.parser
 
 def frist_home(request):
 
-    # football data api
-    scorer = requests.get(
-        'https://api.football-data.org//v2/competitions/2014/scorers',
-        headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'},).json()
-    #premier league
-    prem = requests.get(
-        'https://api.football-data.org//v2/competitions/2021/scorers',
-        headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'},).json()
-    #france league
-    league = requests.get(
-        'https://api.football-data.org//v2/competitions/2015/scorers',
-        headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'},).json()
-    # football data api
-    juve = requests.get(
-        'https://api.football-data.org//v2/competitions/2014/scorers',
-        headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'},).json()
-
-
 
     # score bat api
     url = 'https://www.scorebat.com/video-api/v1/'
@@ -37,13 +19,7 @@ def frist_home(request):
     context = {
         'posts': Post.objects.all(),
         'user': request.user,
-        'names': scorer['scorers'][0],
-        'prem_names': prem['scorers'][0],
-        'lig_names': league['scorers'][0],
-        'juve':juve,
-        'season': scorer['season'],
         'bat': bat,
-        'v': datetime
     }
 
     return render(request, 'blog/first_home.html', context)
