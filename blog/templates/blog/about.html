@@ -1,18 +1,26 @@
+{% extends "blog/index.html" %} {% block content %} {% load static %}
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item mb-5">
+      <div class="container mb-5 about-text">
+        <h1 class="mb-3 text-center">
+          <img
+            src="{% static 'favicon.png' %}"
+            class="mx-auto d-block mt-5"
+            style="height: 200px; width: 200px;"
+            alt=""
+          />
+        </h1>
 
-{% extends "blog/index.html" %} {% block content %}
-
-<ul class="list-group">
-  <li class="list-group-item mb-5">
-    <div class="container mb-5 about-text">
-      <h1 class="mb-3">About FootHub-FC</h1>
-      <p class="text-secondary">
-        FootHub-FC is a free site of recent football highlight around the world.
-        FootHub is a project by <a href="https://www.ramfattah.com" target="_blank">Ram Fattah</a>, a
-        software engineer based in Seattle, WA.
-      </p>
-    </div>
-  </li>
-</ul>
+        <p class="text-secondary">
+          FootHub-FC is a free site of recent football highlight around the
+          world. FootHub is a project by
+          <a href="https://www.ramfattah.com" target="_blank">Ram Fattah</a>, a
+          software engineer based in Seattle, WA.
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
 
 {% endblock content %}
-
