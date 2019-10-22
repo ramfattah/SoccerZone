@@ -8,7 +8,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="FootHub" content="Free Football Soccer highlights all around the world" />
+    <meta
+      name="FootHub"
+      content="Free Football Soccer highlights all around the world"
+    />
     <meta name="Ram" content="" />
 
     <title>Welcome to FootHub</title>
@@ -29,62 +32,76 @@
       type="text/css"
       href="{% static 'blog/main.css' %}"
     />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-150680894-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-150680894-1");
+    </script>
   </head>
 
   <body id="page-top">
-
     <main>
-    <div class="container">
-      <div class="mt-5 mb-5">
-        <a href="{% url 'index-home' %}">
-          <h1 class="head-text text-dark brand-text text-center">FootHub</h1>
-        </a>
+      <div class="container">
+        <div class="mt-5 mb-5">
+          <a href="{% url 'index-home' %}">
+            <h1 class="head-text text-dark brand-text text-center">FootHub</h1>
+          </a>
+        </div>
+        <!-- <h6 class="mt-5">{% now "jS \o\f F" %}</h6> -->
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="{% url 'index-home' %}"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="{% url 'blog-about' %}"
+              >About</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <p class="nav-link text-dark font-weight-light" href="#">
+              {% now "jS F Y" %}
+            </p>
+          </li>
+        </ul>
       </div>
-      <!-- <h6 class="mt-5">{% now "jS \o\f F" %}</h6> -->
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link text-secondary" href="{% url 'index-home' %}"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-secondary" href="{% url 'blog-about' %}"
-            >About</a
-          >
-        </li>
+      <br />
+      <br />
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <p class="text-center font-weight-light">
+          Your most recent Football highlights around the world! 🔥
+        </p>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <br />
+      <br />
 
-        <li class="nav-item">
-          <p class="nav-link text-dark font-weight-light" href="#">
-            {% now "jS F Y" %}
-          </p>
-        </li>
-      </ul>
-    </div>
-    <br />
-    <br />
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <p class="text-center font-weight-light">
-        Your most recent Football highlights around the world! 🔥
-      </p>
-      <button
-        type="button"
-        class="close"
-        data-dismiss="alert"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <br />
-    <br />
+      <!-- Begin Page Content -->
 
-    <!-- Begin Page Content -->
-
-    <div class="row ml-5">
-      {% block content %}{% endblock %}
-    </div>
-  </main>
-  <!-- <footer class="footer mt-5 mb-5">
+      <div class="row ml-5">
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+    <!-- <footer class="footer mt-5 mb-5">
       <div class="container">
           <ul class="nav justify-content-center">
               <li class="nav-item">
@@ -100,7 +117,6 @@
       </div>
     </footer> -->
 
-    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
