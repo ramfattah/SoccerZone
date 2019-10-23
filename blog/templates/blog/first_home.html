@@ -1,28 +1,21 @@
 {% extends "blog/index.html" %} 
 {% block content %} 
+{% for b in bat|slice:'20'%}
 
-
-
-      {% for b in bat|slice:'20' %}
-          <div class=" rekick card-match mr-4 mb-4">
-            <a href="{{ b.url }}" target="_blank" class="card-link">
-              <div class="card shadow h-100  bg-gray-300">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-sm text-secondary text-uppercase mb-1">{{ b.competition.name }}</div>
-                      <div class="h3 mb-0 text-dark mb-5">{{b.title}}</div>
-                    </div>
-
-                    <div class="col-auto">
-                      <i class="fas fa-eye fa-2x text-gray-300 ml-2"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-            </div>
-{% endfor %}    
-
-
+    <div class="shadow card ml-4 mb-4 card-match" style="width: 18rem;">
+      <a href="{{ b.url }}" class="card-link">
+        <div class="card-body">
+          <h4 class="card-title text-dark">{{ b.title }}</h4>
+          <p class="card-text text-secondary">{{ b.competition.name }}</p>
+          <div class="">
+            <i class="fas fa-eye text-dark fa-2x ml-2"></i>
+            
+          </div>
+          <small class='text-secondary'>
+            {{date|date:'F d,  Y'}} 
+          </small>
+        </div>
+      </a>
+    </div>
+{% endfor %} 
 {% endblock content %}

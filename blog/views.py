@@ -14,12 +14,15 @@ def frist_home(request):
     url = 'https://www.scorebat.com/video-api/v1/'
     bat = requests.get(url).json()
     datetime = dateutil.parser.parse(bat[0]['date'])
+    
+    print(datetime)
    
 
     context = {
         'posts': Post.objects.all(),
         'user': request.user,
         'bat': bat,
+        'date': datetime
     }
 
     return render(request, 'blog/first_home.html', context)

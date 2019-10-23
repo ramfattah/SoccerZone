@@ -53,9 +53,9 @@
 
   <body id="page-top">
       <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <p class="text-center">
+          <h6 class="text-center text-xs">
             Today's Soccer Highlights Around the World! 🔥
-          </p>
+          </h6>
           <button
             type="button"
             class="close"
@@ -86,11 +86,6 @@
             >
           </li>
 
-          <li class="nav-item">
-            <p class="nav-link text-dark font-weight-light" href="#">
-              {% now "jS F Y" %}
-            </p>
-          </li>
         </ul>
       </div>
       <br />
@@ -100,10 +95,11 @@
       <br />
 
       <!-- Begin Page Content -->
-
-      <div class="row ml-5">
+      <div class="container">
+      <div class="row ">
         {% block content %}{% endblock %}
       </div>
+    </div>
     </main>
    
 
