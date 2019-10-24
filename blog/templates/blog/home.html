@@ -1,6 +1,6 @@
 {% extends "blog/index.html" %} 
 {% block home %} 
-
+{% load static %}
     <section>
         <div class="bannerText">
             <h2>Foot Hub</h2><br>
@@ -14,7 +14,7 @@
         
         <!-- <div class="element1"></div> -->
         <div class="element2">            
-            <img src="/media/float.png" style="width: 100px; height: 100px;" alt="">
+            <img src="{% static 'float.png' %}" style="width: 100px; height: 100px;" alt="">
         </div>
     </section>
 {% endblock home %}
