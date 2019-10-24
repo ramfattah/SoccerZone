@@ -1,7 +1,12 @@
 {% extends "blog/index.html" %} 
 {% block content %} 
-{% for b in bat|slice:'20'%}
- 
+<div class="container mb-5">
+    <h2 class="text-center text-uppercase text-secondary">
+        International Soccer
+    </h2>
+    <h6 class="text-center">{% now "jS F Y" %}</h6>
+  </div>
+{% for b in bat|slice:'20'%} 
     <div class="shadow card ml-5 mb-5 card-match border-0" style="width: 18rem;">
       <a href="{{ b.url }}" class="card-link">
         <div class="card-body">
