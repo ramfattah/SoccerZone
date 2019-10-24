@@ -6,7 +6,7 @@ watch today's latest international football highlights from every league around 
 ⚽⚽⚽⚽⚽⚽⚽⚽
 
 
-**This project is built with Django 2.2.6 **
+**This project is built with Django 2.2.6**
 
 You can view a working version of this app
 [here](https://foothubfc.herokuapp.com/)
