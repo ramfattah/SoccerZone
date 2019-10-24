@@ -148,3 +148,4 @@ EMAIL_HOST_USER = os.environ.get('')
 EMAIL_HOST_PASSWORD = os.environ.get('')
 
 django_heroku.settings(locals())
+
