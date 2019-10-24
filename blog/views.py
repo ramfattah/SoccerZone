@@ -35,7 +35,7 @@ def home(request):
         'user': request.user
     }
 
-    return render(request, 'blog/index.html', context)
+    return render(request, 'blog/home.html', context)
 
 
 def index(request):
@@ -46,6 +46,12 @@ def index(request):
     }
     return render(request, 'blog/index.html', context)
 
+def myPosts(request):
+    context = {
+        'posts': Post.objects.all(),
+        'user': request.user
+    }
+    return render(request, 'blog/myPosts.html', context)
 
 class PostListView(ListView):
     model = Post

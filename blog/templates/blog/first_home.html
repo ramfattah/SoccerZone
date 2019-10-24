@@ -1,8 +1,8 @@
 {% extends "blog/index.html" %} 
 {% block content %} 
 {% for b in bat|slice:'20'%}
-
-    <div class="shadow card ml-4 mb-4 card-match" style="width: 18rem;">
+ 
+    <div class="shadow card ml-5 mb-5 card-match border-0" style="width: 18rem;">
       <a href="{{ b.url }}" class="card-link">
         <div class="card-body">
           <h4 class="card-title text-dark">{{ b.title }}</h4>
