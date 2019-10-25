@@ -1,18 +1,20 @@
 {% extends "blog/index.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-
-    <div class="card bg-light mb-3 shadow card-match border-0 mr-5 mb-5">
-        <h3 class="card-header text-dark text-center">PROFILE</h3>
-        <div class="card-body">
-            <div class="media">
-                <div class="media-body">
-                  <fieldset class="text-secondary"><small class="text-dark">User: </small>{{ user.username }}</fieldset>
-                  <fieldset class="text-secondary"><small class="text-dark">Email: </small>{{ user.email }}</fieldset>
+<div class="container">
+        <div class="card bg-dark mb-3 shadow card-match border-0 mr-5 mb-5">
+                <h3 class="card-header text-white text-center">PROFILE</h3>
+                <div class="card-body">
+                    <div class="media">
+                        <div class="media-body">
+                          <fieldset class="text-white">Email: {{ user.email }}</fieldset>
+                          <fieldset class="text-white">User: {{ user.username }}</fieldset>
+                        </div>
+                      </div> 
                 </div>
-              </div> 
-        </div>
-      </div>
+              </div>
+</div>
+    
 
     
 <div class="container">
