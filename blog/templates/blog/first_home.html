@@ -1,14 +1,14 @@
 {% extends "blog/index.html" %} 
 {% block content %} 
-<div class="container mb-5">
-    <h2 class="text-center text-uppercase text-secondary">
+<div class="container card-match shadow mb-5 bg-dark">
+    <h2 class="text-center text-uppercase text-white mt-4">
         International Soccer
     </h2>
-    <h6 class="text-center">{% now "jS F Y" %}</h6>
+    <h6 class="text-center text-white mb-4 text-uppercase">Today <br> {% now "jS F Y" %}</h6>
   </div>
 {% for b in bat|slice:'20'%} 
     <div class="shadow card ml-5 mb-5 card-match border-0" style="width: 18rem;">
-      <a href="{{ b.url }}" class="card-link">
+      <a href="{{ b.url }}" target="_blank" class="card-link">
         <div class="card-body">
           <h4 class="card-title text-dark">{{ b.title }}</h4>
           <p class="card-text text-secondary">{{ b.competition.name }}</p>
@@ -23,4 +23,5 @@
       </a>
     </div>
 {% endfor %} 
+
 {% endblock content %}
