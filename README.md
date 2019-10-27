@@ -11,13 +11,14 @@ watch today's latest international football highlights from every league around 
 You can view a working version of this app
 [here](https://foothubfc.herokuapp.com/)
 
+## Api
 
-Setting up FootHubFC to work in Django is very easy. You need to
-make changes to requirements.txt, settings.py, and any app code that
-you want cached. These changes are covered in detail below.
+This project is using [scorebat API](https://www.scorebat.com/video-api/v1/)
 
 
-![Deploy](https://www.herokucdn.com/deploy/button.png)
+```
+goals and highlights from a number of football leagues and tournaments including the Premier League, Champions League, La Liga, Serie A, Bundesliga and many more in a free JSON feed.
+```
 
 ## Building
 
