@@ -16,9 +16,9 @@ You can view a working version of this app
 This project is using [scorebat API](https://www.scorebat.com/video-api/v1/)
 
 
-```
+``
 goals and highlights from a number of football leagues and tournaments including the Premier League, Champions League, La Liga, Serie A, Bundesliga and many more in a free JSON feed.
-```
+``
 
 ## Building
 
