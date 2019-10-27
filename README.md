@@ -45,7 +45,6 @@ commands to install the necessary pips:
 $ pip install -r requirements.txt
 ```
 
-Don't forget to update your requirements.txt file with these new pips.
 
 
 
