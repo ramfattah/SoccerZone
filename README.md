@@ -50,16 +50,5 @@ Don't forget to update your requirements.txt file with these new pips.
 
 
 
-## Get involved!
-
-We are happy to receive bug reports, fixes, documentation enhancements,
-and other improvements.
-
-Please report bugs via the
-[github issue tracker](https://github.com/ramfattah/FootHub-FC).
-
-* `git clone git://github.com/ramfattah/FootHub-FC.git`
-
-
 
 
