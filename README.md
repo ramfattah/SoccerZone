@@ -11,14 +11,7 @@ watch today's latest international football highlights from every league around 
 You can view a working version of this app
 [here](https://foothubfc.herokuapp.com/)
 
-## Api
 
-This project is using [scorebat API](https://www.scorebat.com/video-api/v1/)
-
-
-``
-goals and highlights from a number of football leagues and tournaments including the Premier League, Champions League, La Liga, Serie A, Bundesliga and many more in a free JSON feed.
-``
 
 ## Building
 
@@ -35,6 +28,14 @@ $ DEVELOPMENT=1 python manage.py runserver
 Then visit `http://localhost:8000` to view the app. 
 
 
+## Api
+
+This project is using [scorebat API](https://www.scorebat.com/video-api/v1/)
+
+
+``
+goals and highlights from a number of football leagues and tournaments including the Premier League, Champions League, La Liga, Serie A, Bundesliga and many more in a free JSON feed.
+``
 
 
 ## requirements.txt
