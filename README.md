@@ -12,12 +12,6 @@ You can view a working version of this app
 [here](https://foothubfc.herokuapp.com/)
 
 
-Setting up FootHubFC to work in Django is very easy. You need to
-make changes to requirements.txt, settings.py, and any app code that
-you want cached. These changes are covered in detail below.
-
-
-![Deploy](https://www.herokucdn.com/deploy/button.png)
 
 ## Building
 
@@ -34,6 +28,14 @@ $ DEVELOPMENT=1 python manage.py runserver
 Then visit `http://localhost:8000` to view the app. 
 
 
+## Api
+
+This project is using [scorebat API](https://www.scorebat.com/video-api/v1/)
+
+
+``
+goals and highlights from a number of football leagues and tournaments including the Premier League, Champions League, La Liga, Serie A, Bundesliga and many more in a free JSON feed.
+``
 
 
 ## requirements.txt
@@ -45,20 +47,8 @@ commands to install the necessary pips:
 $ pip install -r requirements.txt
 ```
 
-Don't forget to update your requirements.txt file with these new pips.
 
 
-
-
-## Get involved!
-
-We are happy to receive bug reports, fixes, documentation enhancements,
-and other improvements.
-
-Please report bugs via the
-[github issue tracker](https://github.com/ramfattah/FootHub-FC).
-
-* `git clone git://github.com/ramfattah/FootHub-FC.git`
 
 
 
