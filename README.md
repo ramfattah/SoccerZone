@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  ![image](https://i.ibb.co/BzH097v/Untitled-1.png) [FootHub-FC](https://foothubfc.herokuapp.com)
+  FootHub
   <img src="https://i.ibb.co/BzH097v/Untitled-1.png">
 </h1>
 
