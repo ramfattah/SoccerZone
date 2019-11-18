@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  FootHub
+  <bold>FootHub</bold>
   <img src="https://i.ibb.co/BzH097v/Untitled-1.png">
 </h1>
 
