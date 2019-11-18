@@ -1,8 +1,9 @@
 
   
   # FootHub
-### Watch today's latest international football highlights from every league around the world. 
 <img src="https://i.ibb.co/BzH097v/Untitled-1.png"> 
+### Watch today's latest international football highlights from every league around the world. 
+
 
 **This project is built with Django 2.2.6**
 
