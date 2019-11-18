@@ -1,9 +1,8 @@
-# [FootHub-FC](https://foothubfc.herokuapp.com)
 
+  
+# <img src="https://i.ibb.co/BzH097v/Untitled-1.png">     FootHub
 
-watch today's latest international football highlights from every league around the world. 
-
-⚽⚽⚽⚽⚽⚽⚽⚽
+### Watch today's latest international football highlights from every league around the world. 
 
 
 **This project is built with Django 2.2.6**
@@ -13,16 +12,36 @@ You can view a working version of this app
 
 
 
-## Building
+## Get Started
 
 It is best to use the python `virtualenv` tool to build locally:
 
+### Install Virtualenv
 
 ```sh
-$ virtualenv-2.7 venv
-$ source venv/bin/activate
+$ pip install virtualenv
+```
+
+### Requirements
+
+- Activate the virtual enviornment
+
+```sh
+$ virtualenv-2.7 env <# name #>
+$ source venv/Scripts/activate <# to activate #>
+```
+
+- Install requirements.txt
+
+```sh
 $ pip install -r requirements.txt
-$ DEVELOPMENT=1 python manage.py runserver
+$ python manage.py runserver
+```
+
+### Run server
+
+```sh
+$ python manage.py runserver
 ```
 
 Then visit `http://localhost:8000` to view the app. 
