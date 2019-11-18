@@ -13,16 +13,28 @@ You can view a working version of this app
 
 
 
-## Building
+## Get Started
 
 It is best to use the python `virtualenv` tool to build locally:
+
+Install Virtualenv
+```sh
+$ pip install virtualenv
+```
+
+```sh
+$ virtualenv-2.7 venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+$ python manage.py runserver
+```
 
 
 ```sh
 $ virtualenv-2.7 venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
-$ DEVELOPMENT=1 python manage.py runserver
+$ python manage.py runserver
 ```
 
 Then visit `http://localhost:8000` to view the app. 
