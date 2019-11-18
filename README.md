@@ -1,9 +1,6 @@
 
-<h1 align="center">
-  <img src="https://i.ibb.co/BzH097v/Untitled-1.png">
-  <bold>FootHub</bold>
-</h1>
-
+  
+  # <img src="https://i.ibb.co/BzH097v/Untitled-1.png"> FootHub
 ### Watch today's latest international football highlights from every league around the world. 
 
 
