@@ -32,8 +32,17 @@
       crossorigin="anonymous"
     ></script>
 
-    
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <!-- scroll bar -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'favicon.png' %}"
+    />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -49,71 +58,85 @@
 
       gtag("config", "UA-150680894-1");
     </script>
+
+    
   </head>
 
   <body id="page-top">
-      
     <main>
-      <nav class="shadow navbar navbar-light navbar-expand-md bg-faded justify-content-center">
-          <a href="{% url 'home-page' %}" class="navbar-brand d-flex w-50 mr-auto">FootHub</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-              <ul class="navbar-nav w-100 justify-content-center">
-                  
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'index-home' %}">Explore</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{% url 'blog-about' %}">About</a>
-                  </li>
-              </ul>
-              <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-                  {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <p class="nav-link text-dark">Welcome {{user}}</p>
-                    </li>
-                    <li class="nav-item">
-                      <a href="{% url 'profile' %}" class="nav-link text-secondary">Profile</a>
-                  </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-secondary" href="{% url 'logout' %}">Logout</a>
-                    </li>
-                  {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'register' %}">Register</a>
-                    </li>
-                  {% endif %}
-              </ul>
-          </div>
+      <nav
+        class="shadow navbar navbar-light navbar-expand-md bg-faded justify-content-center"
+      >
+        <a href="{% url 'home-page' %}" class="navbar-brand d-flex w-50 mr-auto"
+          >FootHub</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsingNavbar3"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+          <ul class="navbar-nav w-100 justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index-home' %}">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'blog-about' %}">About</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <p class="nav-link text-dark">Welcome {{user}}</p>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'profile' %}" class="nav-link text-secondary"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="{% url 'logout' %}"
+                >Logout</a
+              >
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
       </nav>
-      
 
       <!-- Begin Page Content -->
-<br>
-<br>
-<br>
-<br>
-     
-     <div class="">
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div class="">
         {% block home %}{% endblock %}
-
-     </div>
-      
-
-
-      <div class="container">
-      <div class="row ">
-        {% block content %}{% endblock %}
       </div>
-    </div>
+
+      <div class="">
+        {% block extop %} {% endblock %}
+      </div>
+
+      <div>
+        <div class="" id="">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
     </main>
-   
- 
+
+    <!-- scroll bar -->
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
