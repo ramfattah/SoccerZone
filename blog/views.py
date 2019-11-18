@@ -10,19 +10,30 @@ import dateutil.parser
 def frist_home(request):
 
 
+   #football-data api
+    footUrl = 'https://api.football-data.org/v2/competitions/2001/scorers'
+    foot = requests.get(footUrl, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+    footdate = dateutil.parser.parse(foot['season']['startDate'])
+
+    #spain
+    spainurl = 'https://api.football-data.org/v2/competitions/2014/scorers'
+    spain = requests.get(spainurl, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+
+
     # score bat api
     url = 'https://www.scorebat.com/video-api/v1/'
     bat = requests.get(url).json()
     datetime = dateutil.parser.parse(bat[0]['date'])
     
-    print(datetime)
    
 
     context = {
-        'posts': Post.objects.all(),
-        'user': request.user,
         'bat': bat,
-        'date': datetime
+        'date': datetime,
+        'foot':foot,
+        'fd': footdate,
+        'spa':spain
+
     }
 
     return render(request, 'blog/first_home.html', context)
@@ -52,6 +63,11 @@ def myPosts(request):
         'user': request.user
     }
     return render(request, 'blog/myPosts.html', context)
+    
+def extop(request):
+
+    return render(request, 'blog/extop.html')
+    
 
 class PostListView(ListView):
     model = Post
