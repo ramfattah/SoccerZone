@@ -3,7 +3,7 @@
 
 ### Watch today's latest international football highlights from every league around the world. 
 
-![image](https://ibb.co/XSHxwvv)
+![image](https://i.ibb.co/r492W11/favicon.png)
 
 
 **This project is built with Django 2.2.6**
