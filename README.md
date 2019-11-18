@@ -35,8 +35,6 @@ $ source venv/Scripts/activate <# to activate #>
 - Install requirements.txt
 
 ```sh
-$ virtualenv-2.7 venv
-$ source venv/bin/activate
 $ pip install -r requirements.txt
 $ python manage.py runserver
 ```
