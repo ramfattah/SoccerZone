@@ -1,6 +1,6 @@
 
   
-# <img src="https://i.ibb.co/BzH097v/Untitled-1.png">     FootHub
+# FootHub
 
 ### Watch today's latest international football highlights from every league around the world. 
 
@@ -10,7 +10,7 @@
 You can view a working version of this app
 [here](https://foothubfc.herokuapp.com/)
 
-
+<img src="https://i.ibb.co/BzH097v/Untitled-1.png"> 
 
 ## Get Started
 
