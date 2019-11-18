@@ -17,10 +17,22 @@ You can view a working version of this app
 
 It is best to use the python `virtualenv` tool to build locally:
 
-Install Virtualenv
+### Install Virtualenv
+
 ```sh
 $ pip install virtualenv
 ```
+
+### Requirements
+
+- Activate the virtual enviornment
+
+```sh
+$ virtualenv-2.7 venv
+$ source venv/bin/activate
+```
+
+- Install requirements.txt
 
 ```sh
 $ virtualenv-2.7 venv
@@ -29,11 +41,9 @@ $ pip install -r requirements.txt
 $ python manage.py runserver
 ```
 
+### Run server
 
 ```sh
-$ virtualenv-2.7 venv
-$ source venv/bin/activate
-$ pip install -r requirements.txt
 $ python manage.py runserver
 ```
 
