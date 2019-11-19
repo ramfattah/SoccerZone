@@ -37,7 +37,6 @@ $ source venv/Scripts/activate <# to activate #>
 
 ```sh
 $ pip install -r requirements.txt
-$ python manage.py runserver
 ```
 
 ### Run server
