@@ -30,7 +30,7 @@ $ pip install virtualenv
 
 ```sh
 $ virtualenv-2.7 env <# name #>
-$ source venv/Scripts/activate <# to activate #>
+$ venv/Scripts/activate <# to activate #>
 ```
 
 - Install requirements.txt
