@@ -15,10 +15,14 @@ def frist_home(request):
     foot = requests.get(footUrl, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
     footdate = dateutil.parser.parse(foot['season']['startDate'])
 
+    #football-data PL England
+    PLURL = 'https://api.football-data.org/v2/competitions/2021/scorers'
+    pl = requests.get(PLURL, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+
     #spain
     spainurl = 'https://api.football-data.org/v2/competitions/2014/scorers'
     spain = requests.get(spainurl, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
-
+    
 
     # score bat api
     url = 'https://www.scorebat.com/video-api/v1/'
@@ -32,7 +36,8 @@ def frist_home(request):
         'date': datetime,
         'foot':foot,
         'fd': footdate,
-        'spa':spain
+        'spa':spain,
+        'pl': pl
 
     }
 

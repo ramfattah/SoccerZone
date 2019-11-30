@@ -31,6 +31,12 @@ background-image: linear-gradient(315deg, #bfe299 0%, #66b5f6 74%);
     background-color: #f876de;
 background-image: linear-gradient(315deg, #f876de 0%, #b9d1eb 74%);
   }
+  .cus-bg4{
+    background-color: #5de6de;
+background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+
+
+  }
 
 
 </style>
@@ -104,7 +110,7 @@ background-image: linear-gradient(315deg, #f876de 0%, #b9d1eb 74%);
 
 
 
-<h1 class="display-4 ml-4 mt-5 text-dark">{{spa.competition.name}} <span class="text-secondary">{% now "Y" %}</span> </h1>
+<h1 class="display-4 ml-4 mt-5 text-dark">La Liga <span class="text-secondary">{% now "Y" %}</span> </h1>
 <div class="d-flex overflow-auto" id="style-1">
   <div class="row mt-5">
     <div class="card ml-5 mb-5 border-0 cus-bg2 mr-3" style="width: 18rem;">
@@ -135,4 +141,36 @@ background-image: linear-gradient(315deg, #f876de 0%, #b9d1eb 74%);
   {% endfor %}
 </div>
 
+
+
+<h1 class="display-4 ml-4 mt-5 text-dark">{{pl.competition.name}} <span class="text-secondary">{% now "Y" %}</span></h1>
+<div class="d-flex overflow-auto" id="style-1">
+  <div class="row mt-5">
+    <div class="card ml-5 mb-5 border-0 cus-bg4 mr-3" style="width: 18rem;">
+      <ul class="list-group card-body ml-3 text-white">
+        <h1 class="h-100 row align-items-center ml-2 text-white">
+          Top Scorers
+        </h1>
+        <h6 class="ml-4">
+            {{ pl.season.startDate  }}    <span class="text-dark">/</span>   {{ pl.season.endDate  }} 
+        </h6>
+      </ul>
+    </div>
+  </div>
+  {% for f in pl.scorers%}
+  <div class="row mt-5">
+    <div
+      class="card ml-5 mb-5 card-match shadow border-0 bg-info"
+      style="width: 18rem;"
+    >
+  <h1 class="ml-4 mt-4 text-dark">
+    <span class="text-white">#{{forloop.counter}} </span> {{ f.player.name }}
+  </h1>
+  <h1 class="ml-4 mt-4 text-white">{{f.numberOfGoals}} Goals 🔥</h1>
+  <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{f.team.name}}</h2>
+  </div>
+  </div>
+
+  {% endfor %}
+</div>
 {% endblock content %}
