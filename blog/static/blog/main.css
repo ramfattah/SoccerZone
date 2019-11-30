@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Dosis:700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Chango&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Exo+2&display=swap');
+
 
 *{
   font-family: 'Paytone One', sans-serif;
@@ -574,3 +576,18 @@ section
   }
 }
 
+.about-text{
+	font-family: 'Exo 2', sans-serif;
+}
+
+.about-text a{
+	font-family: 'Exo 2', sans-serif;
+}
+
+.ramLogo {
+    
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 12em
+  }

@@ -1,19 +1,24 @@
 {% extends "blog/index.html" %} {% block content %} {% load static %}
-<div class="container shadow card-match">
+
+
+<div class="container ">
   <ul class="list-group border-0 ">
     <li class="list-group-item border-0 mb-5">
       <div class="container mb-5  about-text ">
-        <h1 class="mb-3 text-center">
-          <img
+        <div class="mb-3 text-center">
+          <!-- <img
             src="{% static 'favicon.png' %}"
             class="mx-auto d-block mt-5"
-            style="height: 200px; width: 200px;"
+            style="height: 100px; width: 100px;"
             alt=""
-          />
-        </h1>
-
-        <p class="text-dark">
-          FootHub-FC is a free site of recent football highlight around the
+          /> -->
+          <div class="center d-flex">            
+              <img src="{% static 'field.png' %}" class="ramLogo floating" alt="">
+          </div>
+        </div>
+        
+        <p class="text-dark about-text mt-5">
+             FootHub-FC is a free site of recent football highlight around the
           world. FootHub is a project by
           <a href="https://www.ramfattah.com" target="_blank">Ram Fattah</a>. A
           software engineer based in Seattle, WA.
@@ -23,27 +28,30 @@
   </ul>
 </div>
 
+
+
 <!-- Button trigger modal -->
 <!-- Button trigger modal -->
 <div class="container mt-5 text-center">
   <button
     type="button"
-    class="btn btn-dark shadow"
+    class="btn btn-light"
     data-toggle="modal"
     data-target="#exampleModal"
   >
-    Terms Of Use
+    <span class="text-dark about-text"> Terms Of Use</span>
   </button>
 </div>
 
 <!-- Modal -->
 <div
-  class="modal fade"
+  class="modal fade about-text"
   id="exampleModal"
   tabindex="-1"
   role="dialog"
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
+
 >
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -58,9 +66,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body text-secondary">
-        All the video content found on the FootHub is not hosted on this
-        server nor is created or uploaded by the owner. FootHub simply acts as a
+      <div class="modal-body text-secondary about-text">
+        FootHub simply acts as a
         search engine that finds videos from websites like YouTube, DailyMotion,
         Metacafe and other API consumption. FootHub is not responsible for
         external websites content. If you find that some of the content violates
@@ -75,5 +82,7 @@
     </div>
   </div>
 </div>
+
+
 
 {% endblock content %}
