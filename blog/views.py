@@ -69,9 +69,9 @@ def myPosts(request):
     }
     return render(request, 'blog/myPosts.html', context)
     
-def extop(request):
+def teams(request):
 
-    return render(request, 'blog/extop.html')
+    return render(request, 'blog/teams.html')
     
 
 class PostListView(ListView):
