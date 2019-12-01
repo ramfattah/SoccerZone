@@ -1,3 +1,5 @@
+
+
 from django.shortcuts import render, get_object_or_404
 from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -6,11 +8,12 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 import requests
 import dateutil.parser
 
+    
 
 def frist_home(request):
 
 
-   #football-data api
+   #football-data api (UEFA)
     footUrl = 'https://api.football-data.org/v2/competitions/2001/scorers'
     foot = requests.get(footUrl, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
     footdate = dateutil.parser.parse(foot['season']['startDate'])
