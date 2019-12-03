@@ -42,6 +42,11 @@
 
 
 
+
+
+
+  
+
 .card-match{
 	transition: all 0.3s;
 }
@@ -597,5 +602,7 @@ section
 	overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
 }
+
+
 
 
