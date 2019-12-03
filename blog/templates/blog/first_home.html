@@ -48,9 +48,23 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
-
-
 
 
 
@@ -96,6 +110,31 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
 
 
 
+
+
+
+<!-- Nav pills -->
+<ul class="nav nav-pills justify-content-center mt-5">
+
+    <li class="nav-item">
+      <button class=" btn btn-5 nav-link text-info active" data-toggle="pill" href="#home">UEFA</button>
+      
+            
+    </li>
+    <li class="nav-item ml-1">
+      <button class="btn  nav-link text-info" data-toggle="pill" href="#menu1">LA LIGA</button>
+    </li>
+    <li class="nav-item ml-1">
+      <button class="btn nav-link text-info" data-toggle="pill" href="#menu2">EPL</button>
+    </li>
+  </ul>
+  
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="home">
+
+
+      
 <h1 class="display-4 ml-4 mt-5 text-dark">{{foot.competition.name}} <span class="text-secondary">{% now "Y" %}</span></h1>
 <div class="d-flex overflow-auto scrolling" id="style-1">
   <div class="row mt-5">
@@ -129,67 +168,88 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
 
 
 
-<h1 class="display-4 ml-4 mt-5 text-dark">La Liga <span class="text-secondary">{% now "Y" %}</span> </h1>
-<div class="d-flex overflow-auto scrolling" id="style-1">
-  <div class="row mt-5">
-    <div class="card ml-5 mb-5 border-0 cus-bg2 mr-3" style="width: 18rem;">
-      <ul class="list-group card-body ml-3 text-white">
-        <h1 class="h-100 row align-items-center ml-2 text-white">
-          Top Scorers
-        </h1>
-        <h6 class="ml-4">
-            {{ spa.season.startDate  }}  <span class="text-dark">/</span>     {{ spa.season.endDate  }} 
-        </h6>
-      </ul>
+
+    </div>
+    <div class="tab-pane fade" id="menu1">
+
+
+
+        <h1 class="display-4 ml-4 mt-5 text-dark">La Liga <span class="text-secondary">{% now "Y" %}</span> </h1>
+        <div class="d-flex overflow-auto scrolling" id="style-1">
+          <div class="row mt-5">
+            <div class="card ml-5 mb-5 border-0 cus-bg2 mr-3" style="width: 18rem;">
+              <ul class="list-group card-body ml-3 text-white">
+                <h1 class="h-100 row align-items-center ml-2 text-white">
+                  Top Scorers
+                </h1>
+                <h6 class="ml-4">
+                    {{ spa.season.startDate  }}  <span class="text-dark">/</span>     {{ spa.season.endDate  }} 
+                </h6>
+              </ul>
+            </div>
+          </div>
+          {% for i in spa.scorers%}
+          <div class="row mt-5">
+            <div
+              class="card ml-5 mb-5 card-match shadow border-0 bg-info"
+              style="width: 18rem;"
+            >
+          <h1 class="ml-4 mt-4 text-dark">
+            <span class="text-white">#{{forloop.counter}} </span> {{ i.player.name }}
+          </h1>
+          <h1 class="ml-4 mt-4 text-white">{{i.numberOfGoals}} Goals </h1>
+          <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{i.team.name}}</h2>
+          </div>
+          </div>
+        
+          {% endfor %}
+        </div>
+        
+
+
+
+
+    </div>
+    <div class="tab-pane fade" id="menu2">
+
+        <h1 class="display-4 ml-4 mt-5 text-dark">English {{pl.competition.name}} <span class="text-secondary">{% now "Y" %}</span></h1>
+        <div class="d-flex overflow-auto scrolling" id="style-1">
+          <div class="row mt-5">
+            <div class="card ml-5 mb-5 border-0 cus-bg4 mr-3" style="width: 18rem;">
+              <ul class="list-group card-body ml-3 text-white">
+                <h1 class="h-100 row align-items-center ml-2 text-white">
+                  Top Scorers
+                </h1>
+                <h6 class="ml-4">
+                    {{ pl.season.startDate  }}    <span class="text-dark">/</span>   {{ pl.season.endDate  }} 
+                </h6>
+              </ul>
+            </div>
+          </div>
+          {% for f in pl.scorers%}
+          <div class="row mt-5">
+            <div
+              class="card ml-5 mb-5 card-match shadow border-0 bg-info"
+              style="width: 18rem;"
+            >
+          <h1 class="ml-4 mt-4 text-dark">
+            <span class="text-white">#{{forloop.counter}} </span> {{ f.player.name }}
+          </h1>
+          <h1 class="ml-4 mt-4 text-white">{{f.numberOfGoals}} Goals 🔥</h1>
+          <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{f.team.name}}</h2>
+          </div>
+          </div>
+        
+          {% endfor %}
+        </div>
+        {% endblock content %}
+        
+
+
+
     </div>
   </div>
-  {% for i in spa.scorers%}
-  <div class="row mt-5">
-    <div
-      class="card ml-5 mb-5 card-match shadow border-0 bg-info"
-      style="width: 18rem;"
-    >
-  <h1 class="ml-4 mt-4 text-dark">
-    <span class="text-white">#{{forloop.counter}} </span> {{ i.player.name }}
-  </h1>
-  <h1 class="ml-4 mt-4 text-white">{{i.numberOfGoals}} Goals </h1>
-  <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{i.team.name}}</h2>
-  </div>
-  </div>
-
-  {% endfor %}
-</div>
 
 
 
-<h1 class="display-4 ml-4 mt-5 text-dark">English {{pl.competition.name}} <span class="text-secondary">{% now "Y" %}</span></h1>
-<div class="d-flex overflow-auto scrolling" id="style-1">
-  <div class="row mt-5">
-    <div class="card ml-5 mb-5 border-0 cus-bg4 mr-3" style="width: 18rem;">
-      <ul class="list-group card-body ml-3 text-white">
-        <h1 class="h-100 row align-items-center ml-2 text-white">
-          Top Scorers
-        </h1>
-        <h6 class="ml-4">
-            {{ pl.season.startDate  }}    <span class="text-dark">/</span>   {{ pl.season.endDate  }} 
-        </h6>
-      </ul>
-    </div>
-  </div>
-  {% for f in pl.scorers%}
-  <div class="row mt-5">
-    <div
-      class="card ml-5 mb-5 card-match shadow border-0 bg-info"
-      style="width: 18rem;"
-    >
-  <h1 class="ml-4 mt-4 text-dark">
-    <span class="text-white">#{{forloop.counter}} </span> {{ f.player.name }}
-  </h1>
-  <h1 class="ml-4 mt-4 text-white">{{f.numberOfGoals}} Goals 🔥</h1>
-  <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{f.team.name}}</h2>
-  </div>
-  </div>
 
-  {% endfor %}
-</div>
-{% endblock content %}
