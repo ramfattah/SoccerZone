@@ -66,7 +66,7 @@
     <main>
       
       <nav
-        class="shadow navbar navbar-light navbar-expand-md bg-faded justify-content-center"
+        class="text-sm shadow navbar navbar-light navbar-expand-md bg-faded justify-content-center"
       >
         <a href="{% url 'home-page' %}" class="navbar-brand d-flex w-50 mr-auto"
           >FootHub</a
@@ -132,15 +132,11 @@
         {% block home %}{% endblock %}
       </div>
 
-      <div class="">
-        {% block extop %} {% endblock %}
-      </div>
+      
 
-      <div>
         <div class="" id="">
           {% block content %}{% endblock %}
         </div>
-      </div>
     </main>
 
     <!-- scroll bar -->
