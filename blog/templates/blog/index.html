@@ -66,23 +66,25 @@
     <main>
       
       <nav
-        class="text-sm shadow navbar navbar-light navbar-expand-md bg-faded justify-content-center"
+        class="text-sm shadow navbar text-uppercase navbar-expand-md bg-faded justify-content-center" style="background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+        box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+    "
       >
-        <a href="{% url 'home-page' %}" class="navbar-brand d-flex w-50 mr-auto"
+        <a href="{% url 'home-page' %}" class="navbar-brand d-flex text-white w-50 mr-auto"
           >FootHub</a
         >
         <button
-          class="navbar-toggler"
+          class="navbar-toggler text-white"
           type="button"
           data-toggle="collapse"
           data-target="#collapsingNavbar3"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon text-white"></span>
         </button>
         <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
           <ul class="navbar-nav w-100 justify-content-center">
               <li class="nav-item">
-                  <a class="nav-link" href="{% url 'index-home' %}">Explore <small><span
+                  <a class="nav-link text-white" href="{% url 'index-home' %}">Explore <small><span
                     class="text-sm badge badge-pill badge-warning text-white about-text">BETA</span></small></a>
                 </li>
 
@@ -91,7 +93,7 @@
             </li> -->
             
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog-about' %}">About</a>
+              <a class="nav-link text-white" href="{% url 'blog-about' %}">About</a>
             </li>
           </ul>
           <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
@@ -99,7 +101,7 @@
             <li class="nav-item">
               <!-- <p class="nav-link text-dark">{{user}}</p> -->
               <div class="dropdown mr-5">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{user}}
                 </button>
                 <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
@@ -112,10 +114,10 @@
            
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
+              <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'register' %}">Register</a>
+              <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
             </li>
             {% endif %}
           </ul>
