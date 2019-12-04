@@ -1,9 +1,6 @@
 {% extends "blog/index.html" %} {% block content %} {% load static %}
 
 <style>
-
-
-
   #style-1::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -25,35 +22,57 @@
     background-color: #90d5ec;
     background-image: linear-gradient(315deg, #90d5ec 0%, #fc575e 74%);
   }
+
   .cus-bg1 {
     background-color: #20bf55;
-background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
 
   }
 
-  .cus-bg2{
+  .cus-bg2 {
     background-color: #7f5a83;
-background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
 
 
   }
-  .cus-bg3{
-    background-color: #f876de;
-background-image: linear-gradient(315deg, #f876de 0%, #b9d1eb 74%);
+
+  .cus-bg3 {
+    background-color: #bd4f6c;
+background-image: linear-gradient(326deg, #bd4f6c 0%, #d7816a 74%);
+
   }
-  .cus-bg4{
+
+  .cus-bg4 {
     background-color: #5de6de;
-background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
+    background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);
 
   }
 
-  .cus-bg5{
+  .cus-bg5 {
 
-    
-    background: #f2709c;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #ff9472, #f2709c);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+    background: #f2709c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff9472, #f2709c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff9472, #f2709c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  }
+
+  .cus-bg6 {
+
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+
+  }
+
+  .cus-bg7 {
+
+    background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   }
 
@@ -61,24 +80,25 @@ background: linear-gradient(to right, #ff9472, #f2709c); /* W3C, IE 10+/ Edge, F
 
 
 
-  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  .nav-pills .nav-link.active,
+  .nav-pills .show>.nav-link {
     color: #fff;
     background-color: #70707027;
-}
+  }
 
 
 
-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+  box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  }
 
-.buttons {
+  .buttons {
     margin: 10%;
     text-align: center;
-}
+  }
 
-.btn-hover {
+  .btn-hover {
     width: 200px;
     font-size: 16px;
     font-weight: 600;
@@ -86,7 +106,7 @@ box;
     cursor: pointer;
     margin: 20px;
     height: 55px;
-    text-align:center;
+    text-align: center;
     border: none;
     background-size: 300% 100%;
 
@@ -95,67 +115,74 @@ box;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-}
+  }
 
-.btn-hover:hover {
+  .btn-hover:hover {
     background-position: 100% 0;
     moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-}
+  }
 
-.btn-hover:focus {
+  .btn-hover:focus {
     outline: none;
-}
+  }
 
-.btn-hover.color-1 {
+  .btn-hover.color-1 {
     background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
-}
-.btn-hover.color-2 {
+  }
+
+  .btn-hover.color-2 {
     background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
     box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
-}
-.btn-hover.color-3 {
+  }
+
+  .btn-hover.color-3 {
     background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
     box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-}
-.btn-hover.color-4 {
+  }
+
+  .btn-hover.color-4 {
     background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
     box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-}
-.btn-hover.color-5 {
+  }
+
+  .btn-hover.color-5 {
     background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
-}
-.btn-hover.color-6 {
+  }
+
+  .btn-hover.color-6 {
     background-image: linear-gradient(to right, #009245, #FCEE21, #00A8C5, #D9E021);
     box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
-}
-.btn-hover.color-7 {
+  }
+
+  .btn-hover.color-7 {
     background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
     box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
-}
-.btn-hover.color-8 {
+  }
+
+  .btn-hover.color-8 {
     background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
     box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-}
-.btn-hover.color-9 {
+  }
+
+  .btn-hover.color-9 {
     background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
     box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-}
-.btn-hover.color-10 {
-        background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+  }
+
+  .btn-hover.color-10 {
+    background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #FBB03B);
     box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
-}
-.btn-hover.color-11 {
-       background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
-}
+  }
 
-
-
-
+  .btn-hover.color-11 {
+    background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);
+    box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+  }
 </style>
 
 
@@ -182,155 +209,201 @@ box;
 </div> -->
 
 
-    <h1 class="display-4 ml-4 mt-2 text-dark text-center">TOP SCORERS <span class="text-secondary">{% now "Y" %}</span></h1>
-    <div class="contianer mt-5"> 
+<h1 class="display-4 ml-4 mt-2 text-dark text-center">TOP SCORERS <span class="text-secondary">{% now "Y" %}</span></h1>
+<div class="contianer mt-5">
+   
+  <!-- Nav pills -->
+  <ul class="nav nav-pills justify-content-center mt-5">    
+    <li class="nav-item">
+      <button class="btn-hover color-1 active" data-toggle="pill" href="#home">UEFA</button>            
+    </li>
+    <li class="nav-item ml-1">
+      
+      <button class="btn-hover color-3" data-toggle="pill" href="#menu1">LA LIGA</button>
+    </li>
+    <li class="nav-item ml-1">
+      <button class="btn-hover color-4" data-toggle="pill" href="#menu2">EPL</button>
+    </li>
+    <li class="nav-item ml-1">
+      <button class="btn-hover color-5" data-toggle="pill" href="#menu3">SERIE A</button>
+    </li>
+    <li class="nav-item ml-1">
+      <button class="btn-hover color-8" data-toggle="pill" href="#menu4">LIGUE 1</button>
+    </li>
+  </ul>
 
-        <!-- Nav pills -->
-        <ul class="nav nav-pills justify-content-center mt-5">
-    
-          <li class="nav-item">
-            <!-- <button class=" btn btn-5 nav-link text-dark active" data-toggle="pill" href="#home">UEFA</button> -->
-            <button class="btn-hover color-1 active" data-toggle="pill" href="#home">UEFA</button>
-        
-            
-                  
-          </li>
-          <li class="nav-item ml-1">
-            
-            <button class="btn-hover color-3" data-toggle="pill" href="#menu1">LA LIGA</button>
-        
-        
-          </li>
-          <li class="nav-item ml-1">
-            <button class="btn-hover color-4" data-toggle="pill" href="#menu2">EPL</button>
-        
-          </li>
-        </ul>
-    
-    
-    
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div class="tab-pane active" id="home">
-    
-    
-          
-    <!-- <h1 class="display-4 ml-4 mt-5 text-dark text-center">{{foot.competition.name}} <span class="text-secondary">{% now "Y" %}</span></h1> -->
-    
-    <div class="d-flex overflow-auto scrolling" id="style-1">
-      <div class="row mt-5">
-        <div class="card ml-5 mb-5 border-0 cus-bg1 mr-3" style="width: 18rem;">
-          <ul class="list-group card-body ml-3 text-white">
-            <h1 class="h-100 row align-items-center ml-2 text-white">
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="home">
+
+
+
+      <!-- <h1 class="display-4 ml-4 mt-5 text-dark text-center">{{foot.competition.name}} <span class="text-secondary">{% now "Y" %}</span></h1> -->
+
+      <div class="d-flex overflow-auto scrolling" id="style-1">
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 border-0 cus-bg1 mr-3" style="width: 18rem;">
+            <ul class="list-group card-body ml-3 text-white">
+              <h1 class="h-100 row align-items-center ml-2 text-white">
                 {{foot.competition.name}}
+              </h1>
+              <h6 class="ml-4">
+                {{ foot.season.startDate  }} <span class="text-dark">/</span> {{ foot.season.endDate  }}
+              </h6>
+            </ul>
+          </div>
+        </div>
+        {% for f in foot.scorers%}
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
+            <h1 class="ml-4 mt-4 text-dark">
+              <span class="text-white">#{{forloop.counter}} </span> {{ f.player.name }}
             </h1>
-            <h6 class="ml-4">
-                {{ foot.season.startDate  }}    <span class="text-dark">/</span>   {{ foot.season.endDate  }} 
-            </h6>
-          </ul>
+            <h1 class="ml-4 mt-4 text-white">{{f.numberOfGoals}} Goals 🔥</h1>
+            <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{f.team.name}}</h2>
+          </div>
         </div>
+
+        {% endfor %}
       </div>
-      {% for f in foot.scorers%}
-      <div class="row mt-5">
-        <div
-          class="card ml-5 mb-5 card-match shadow border-0 bg-info"
-          style="width: 18rem;"
-        >
-      <h1 class="ml-4 mt-4 text-dark">
-        <span class="text-white">#{{forloop.counter}} </span> {{ f.player.name }}
-      </h1>
-      <h1 class="ml-4 mt-4 text-white">{{f.numberOfGoals}} Goals 🔥</h1>
-      <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{f.team.name}}</h2>
-      </div>
-      </div>
-    
-      {% endfor %}
+
+
+
+
     </div>
-    
-    
-    
-    
-        </div>
-        <div class="tab-pane fade" id="menu1">
-            <!-- <h1 class="display-4 ml-4 mt-5 text-dark text-center">La Liga <span class="text-secondary">{% now "Y" %}</span> </h1> -->
-            <div class="d-flex overflow-auto scrolling" id="style-1">
-              <div class="row mt-5">
-                <div class="card ml-5 mb-5 border-0 cus-bg2 mr-3" style="width: 18rem;">
-                  <ul class="list-group card-body ml-3 text-white">
-                    <h1 class="h-100 row align-items-center ml-2 text-white">
-                        La Liga
-                    </h1>
-                    <h6 class="ml-4">
-                        {{ spa.season.startDate  }}  <span class="text-dark">/</span>     {{ spa.season.endDate  }} 
-                    </h6>
-                  </ul>
-                </div>
-              </div>
-              {% for i in spa.scorers%}
-              <div class="row mt-5">
-                <div
-                  class="card ml-5 mb-5 card-match shadow border-0 bg-info"
-                  style="width: 18rem;"
-                >
-              <h1 class="ml-4 mt-4 text-dark">
-                <span class="text-white">#{{forloop.counter}} </span> {{ i.player.name }}
+    <div class="tab-pane fade" id="menu1">
+      <!-- <h1 class="display-4 ml-4 mt-5 text-dark text-center">La Liga <span class="text-secondary">{% now "Y" %}</span> </h1> -->
+      <div class="d-flex overflow-auto scrolling" id="style-1">
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 border-0 cus-bg2 mr-3" style="width: 18rem;">
+            <ul class="list-group card-body ml-3 text-white">
+              <h1 class="h-100 row align-items-center ml-2 text-white">
+                La Liga
               </h1>
-              <h1 class="ml-4 mt-4 text-white">{{i.numberOfGoals}} Goals 🔥</h1>
-              <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{i.team.name}}</h2>
-              </div>
-              </div>
-            
-              {% endfor %}
-            </div>
-            
-    
-    
-    
-    
+              <h6 class="ml-4">
+                {{ spa.season.startDate  }} <span class="text-dark">/</span> {{ spa.season.endDate  }}
+              </h6>
+            </ul>
+          </div>
         </div>
-        <div class="tab-pane fade" id="menu2">
-    
-            <div class="d-flex overflow-auto scrolling" id="style-1">
-              <div class="row mt-5">
-                <div class="card ml-5 mb-5 border-0 cus-bg mr-3" style="width: 18rem;">
-                  <ul class="list-group card-body ml-3 text-white">
-                    <h1 class="h-100 row align-items-center ml-2 text-white">
-                        English {{pl.competition.name}}
-                    </h1>
-                    <h6 class="ml-4">
-                        {{ pl.season.startDate  }}    <span class="text-dark">/</span>   {{ pl.season.endDate  }} 
-                    </h6>
-                  </ul>
-                </div>
-              </div>
-              {% for f in pl.scorers%}
-              <div class="row mt-5">
-                <div
-                  class="card ml-5 mb-5 card-match shadow border-0 bg-info"
-                  style="width: 18rem;"
-                >
-              <h1 class="ml-4 mt-4 text-dark">
-                <span class="text-white">#{{forloop.counter}} </span> {{ f.player.name }}
-              </h1>
-              <h1 class="ml-4 mt-4 text-white">{{f.numberOfGoals}} Goals 🔥</h1>
-              <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{f.team.name}}</h2>
-              </div>
-              </div>
-            
-              {% endfor %}
-            </div>
-            
-            
-    
-    
-    
+        {% for i in spa.scorers%}
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
+            <h1 class="ml-4 mt-4 text-dark">
+              <span class="text-white">#{{forloop.counter}} </span> {{ i.player.name }}
+            </h1>
+            <h1 class="ml-4 mt-4 text-white">{{i.numberOfGoals}} Goals 🔥</h1>
+            <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{i.team.name}}</h2>
+          </div>
         </div>
-    
+
+        {% endfor %}
       </div>
-    
-    
-    
+
+
+
+
+
     </div>
+    <div class="tab-pane fade" id="menu2">
+
+      <div class="d-flex overflow-auto scrolling" id="style-1">
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 border-0 cus-bg3  mr-3" style="width: 18rem;">
+            <ul class="list-group card-body ml-3 text-white">
+              <h1 class="h-100 row align-items-center ml-2 text-white">
+                English {{pl.competition.name}}
+              </h1>
+              <h6 class="ml-4">
+                {{ pl.season.startDate  }} <span class="text-dark">/</span> {{ pl.season.endDate  }}
+              </h6>
+            </ul>
+          </div>
+        </div>
+        {% for f in pl.scorers%}
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
+            <h1 class="ml-4 mt-4 text-dark">
+              <span class="text-white">#{{forloop.counter}} </span> {{ f.player.name }}
+            </h1>
+            <h1 class="ml-4 mt-4 text-white">{{f.numberOfGoals}} Goals 🔥</h1>
+            <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{f.team.name}}</h2>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+
+    </div>
+
+
+
+    <div class="tab-pane fade" id="menu3">
+
+      <div class="d-flex overflow-auto scrolling" id="style-1">
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 border-0 cus-bg1 mr-3" style="width: 18rem;">
+            <ul class="list-group card-body ml-3 text-white">
+              <h1 class="h-100 row align-items-center ml-2 text-white">
+                SERIE A
+              </h1>
+              <h6 class="ml-4">
+                {{ sa.season.startDate  }} <span class="text-dark">/</span> {{ sa.season.endDate  }}
+              </h6>
+            </ul>
+          </div>
+        </div>
+        {% for s in sa.scorers%}
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
+            <h1 class="ml-4 mt-4 text-dark">
+              <span class="text-white">#{{forloop.counter}} </span> {{ s.player.name }}
+            </h1>
+            <h1 class="ml-4 mt-4 text-white">{{s.numberOfGoals}} Goals 🔥</h1>
+            <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{s.team.name}}</h2>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+
+
+    <div class="tab-pane fade" id="menu4">
+
+      <div class="d-flex overflow-auto scrolling" id="style-1">
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 border-0 cus-bg7 mr-3" style="width: 18rem;">
+            <ul class="list-group card-body ml-3 text-white">
+              <h1 class="h-100 row align-items-center ml-2 text-white">
+                LIGUE 1
+              </h1>
+              <h6 class="ml-4">
+                {{ fr.season.startDate  }} <span class="text-dark">/</span> {{ fr.season.endDate  }}
+              </h6>
+            </ul>
+          </div>
+        </div>
+        {% for f in fr.scorers%}
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
+            <h1 class="ml-4 mt-4 text-dark">
+              <span class="text-white">#{{forloop.counter}} </span> {{ f.player.name }}
+            </h1>
+            <h1 class="ml-4 mt-4 text-white">{{f.numberOfGoals}} Goals 🔥</h1>
+            <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{f.team.name}}</h2>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
 
 
 
@@ -344,41 +417,32 @@ box;
 
 <div class="color-2 jumbotron jumbotron-fluid">
 
-    <h1 class="display-4 text-dark text-uppercase text-center">today <span><i class="fas fa-play ml-2"></i></span></h1>
-    <div class="d-flex overflow-auto scrolling" id="style-1">
-      {% for b in bat|slice:'30'%}
-      <div class="row mt-5">
-        <div
-          class="card ml-5 mb-5 card-match shadow border-0 bg-info"
-          style="width: 18rem;"
-        >
-          <a href="{{ b.url }}" target="_blank" class="card-link">
-            <ul class="list-group card-body ml-3">
-              <li
-                class="h2 list d-flex justify-content-between text-uppercase align-items-center text-dark"
-              >
-                {{ b.title }}
-    
-               
-              </li>
-              <li
-                class="h6 list  d-flex justify-content-between text-white align-items-center"
-              >
-                {{ b.competition.name }}
-              </li>
-              <li
-                class="list d-flex  justify-content-between text-white align-items-center"
-              >
-                {{date|date:'F d, Y'}}
-              </li>
-            </ul>
-          </a>
-        </div>
+  <h1 class="display-4 text-dark text-uppercase text-center">today <span><i class="fas fa-play ml-2"></i></span></h1>
+  <div class="d-flex overflow-auto scrolling" id="style-1">
+    {% for b in bat|slice:'30'%}
+    <div class="row mt-5">
+      <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
+        <a href="{{ b.url }}" target="_blank" class="card-link">
+          <ul class="list-group card-body ml-3">
+            <li class="h2 list d-flex justify-content-between text-uppercase align-items-center text-dark">
+              {{ b.title }}
+
+
+            </li>
+            <li class="h6 list  d-flex justify-content-between text-white align-items-center">
+              {{ b.competition.name }}
+            </li>
+            <li class="list d-flex  justify-content-between text-white align-items-center">
+              {{date|date:'F d, Y'}}
+            </li>
+          </ul>
+        </a>
       </div>
-    
-      {% endfor %}
     </div>
-    
+
+    {% endfor %}
+  </div>
+
 </div>
 
 

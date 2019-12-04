@@ -21,6 +21,20 @@ def frist_home(request):
     #football-data PL England
     PLURL = 'https://api.football-data.org/v2/competitions/2021/scorers'
     pl = requests.get(PLURL, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+    
+    #football-data italy serie A
+    italy = 'https://api.football-data.org/v2/competitions/2019/scorers'
+    SA = requests.get(italy, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+
+
+    #football-data bundesliga
+    ger = 'https://api.football-data.org/v2/competitions/2002/scorers'
+    bun = requests.get(ger, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+
+
+    #football-data France Ligue 1
+    fra = 'https://api.football-data.org/v2/competitions/2015/scorers'
+    france = requests.get(fra, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
 
     #spain
     spainurl = 'https://api.football-data.org/v2/competitions/2014/scorers'
@@ -40,7 +54,10 @@ def frist_home(request):
         'foot':foot,
         'fd': footdate,
         'spa':spain,
-        'pl': pl
+        'pl': pl,
+        'sa': SA,
+        'fr': france,
+        'bun': bun
 
     }
 

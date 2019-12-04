@@ -534,26 +534,3 @@ section {
   overflow-y: scroll; /* has to be scroll, not auto */
   -webkit-overflow-scrolling: touch;
 }
-
-.granimate {
-  background-image: linear-gradient(
-    to right,
-    #29323c,
-    #30475f,
-    #2b5876,
-	#4e4376
-	);
-  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-
-  animation: hue 11s linear 0s infinite reverse;
-}
-.granimate::before {
-  background: linear-gradient(105deg, rgba(156, 10, 10, 0), #630d50);
-  animation: hue 12s linear 1s infinite;
-}
-
-@keyframes hue {
-  to {
-    filter: hue-rotate(1turn);
-  }
-}
