@@ -1,6 +1,9 @@
 {% extends "blog/index.html" %} {% block content %} {% load static %}
 
 <style>
+
+
+
   #style-1::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -209,9 +212,49 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 </div> -->
 
 
-<h1 class="display-4 ml-4 mt-2 text-dark text-center">TOP SCORERS <span class="text-secondary">{% now "Y" %}</span></h1>
+
+<div class="color-2 mt-5">
+
+    <h1 class="display-4 text-dark text-uppercase text-center mb-5">today <span><i class="fas fa-play ml-2"></i></span></h1>
+    <div class="d-flex overflow-auto scrolling" id="style-1">
+      {% for b in bat|slice:'30'%}
+      <div class="row mt-5">
+        <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
+          <a href="{{ b.url }}" target="_blank" class="card-link">
+            <ul class="list-group card-body ml-3">
+              <li class="h2 list d-flex justify-content-between text-uppercase align-items-center text-dark">
+                {{ b.title }}
+  
+  
+              </li>
+              <li class="h6 list  d-flex justify-content-between text-white align-items-center">
+                {{ b.competition.name }}
+              </li>
+              <li class="list d-flex  justify-content-between text-white align-items-center">
+                {{date|date:'F d, Y'}}
+              </li>
+            </ul>
+          </a>
+        </div>
+      </div>
+  
+      {% endfor %}
+    </div>
+  
+  </div>
+  
+  
+
+
+
+
+
+
+
+
+<h1 class="display-4 ml-4 mt-5 text-dark text-center">TOP SCORERS <span class="text-secondary">{% now "Y" %}</span></h1>
 <div class="contianer mt-5">
-   
+   <div class="">
   <!-- Nav pills -->
   <ul class="nav nav-pills justify-content-center mt-5">    
     <li class="nav-item">
@@ -231,7 +274,7 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
       <button class="btn-hover color-8" data-toggle="pill" href="#menu4">LIGUE 1</button>
     </li>
   </ul>
-
+</div>
   <!-- Tab panes -->
   <div class="tab-content">
     <div class="tab-pane active" id="home">
@@ -413,37 +456,6 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 
 
 
-
-
-<div class="color-2 jumbotron jumbotron-fluid">
-
-  <h1 class="display-4 text-dark text-uppercase text-center">today <span><i class="fas fa-play ml-2"></i></span></h1>
-  <div class="d-flex overflow-auto scrolling" id="style-1">
-    {% for b in bat|slice:'30'%}
-    <div class="row mt-5">
-      <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
-        <a href="{{ b.url }}" target="_blank" class="card-link">
-          <ul class="list-group card-body ml-3">
-            <li class="h2 list d-flex justify-content-between text-uppercase align-items-center text-dark">
-              {{ b.title }}
-
-
-            </li>
-            <li class="h6 list  d-flex justify-content-between text-white align-items-center">
-              {{ b.competition.name }}
-            </li>
-            <li class="list d-flex  justify-content-between text-white align-items-center">
-              {{date|date:'F d, Y'}}
-            </li>
-          </ul>
-        </a>
-      </div>
-    </div>
-
-    {% endfor %}
-  </div>
-
-</div>
 
 
 
