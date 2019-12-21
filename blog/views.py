@@ -89,9 +89,9 @@ def myPosts(request):
     }
     return render(request, 'blog/myPosts.html', context)
     
-def teams(request):
+def drills(request):
 
-    return render(request, 'blog/teams.html')
+    return render(request, 'blog/drills.html')
     
 
 class PostListView(ListView):

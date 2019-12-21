@@ -20,6 +20,7 @@
       type="text/css"
       href="{% static 'blog/main.css' %}"
     />
+    
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -30,6 +31,9 @@
     <script
       src="https://kit.fontawesome.com/282e6ec7ef.js"
       crossorigin="anonymous"
+    ></script>
+    <script
+      src="{% static 'blog/script.js' %}"
     ></script>
 
     <!-- scroll bar -->
@@ -84,14 +88,16 @@
         <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
           <ul class="navbar-nav w-100 justify-content-center">
               <li class="nav-item">
-                  <a class="nav-link text-white" href="{% url 'index-home' %}">Explore <small><span
-                    class="text-sm badge badge-pill badge-warning text-white about-text">BETA</span></small></a>
+                  <a class="nav-link text-white" href="{% url 'index-home' %}">Explore</a>
                 </li>
 
             <!-- <li class="nav-item">
               <a class="nav-link" href="{% url 'index-home' %}"> Today </a>
             </li> -->
             
+            <!-- <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'drills' %}">drills</a>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link text-white" href="{% url 'blog-about' %}">About</a>
             </li>
@@ -125,10 +131,7 @@
       </nav>
 
       <!-- Begin Page Content -->
-      <br />
-      <br />
-      <br />
-      <br />
+    
 
       <div class="">
         {% block home %}{% endblock %}
@@ -142,6 +145,16 @@
     </main>
 
 
+    <script>
+    $("#sidebar-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+    </script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
 
     <!-- scroll bar -->
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>

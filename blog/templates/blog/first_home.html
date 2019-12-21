@@ -1,6 +1,9 @@
 {% extends "blog/index.html" %} {% block content %} {% load static %}
 
 <style>
+
+
+
   #style-1::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -200,38 +203,89 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 </div> -->
 
 
-
-
-
 <!-- <div class="row justify-content-center">
    <img src="{% static 'uefa.png' %}" class="ml-2" style="width: 50px; height: 50px;" alt="">
   <img src="{% static 'epl.png' %}" class="ml-2" style="width: 50px; height: 50px;" alt="">
 </div> -->
 
 
-<h1 class="display-4 ml-4 mt-2 text-dark text-center">TOP SCORERS <span class="text-secondary">{% now "Y" %}</span></h1>
-<div class="contianer mt-5">
-   
-  <!-- Nav pills -->
-  <ul class="nav nav-pills justify-content-center mt-5">    
-    <li class="nav-item">
-      <button class="btn-hover color-1 active" data-toggle="pill" href="#home">UEFA</button>            
-    </li>
-    <li class="nav-item ml-1">
-      
-      <button class="btn-hover color-3" data-toggle="pill" href="#menu1">LA LIGA</button>
-    </li>
-    <li class="nav-item ml-1">
-      <button class="btn-hover color-4" data-toggle="pill" href="#menu2">EPL</button>
-    </li>
-    <li class="nav-item ml-1">
-      <button class="btn-hover color-5" data-toggle="pill" href="#menu3">SERIE A</button>
-    </li>
-    <li class="nav-item ml-1">
-      <button class="btn-hover color-8" data-toggle="pill" href="#menu4">LIGUE 1</button>
-    </li>
-  </ul>
 
+<div class="color-2 mt-5">
+
+    <h1 class="display-4 text-dark text-uppercase text-center mb-5">today's replay 
+      <span>
+        <img src="https://img.icons8.com/cotton/64/000000/tv-show.png">
+    </span>
+  </h1>
+    <div class="d-flex overflow-auto scrolling" id="style-1">
+      {% for b in bat|slice:'30'%}
+      <div class="row mt-5">
+        <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
+          <a href="{{ b.url }}" target="_blank" class="card-link">
+            <ul class="list-group card-body ml-3">
+              <li class="h2 list d-flex justify-content-between text-uppercase align-items-center text-dark">
+                {{ b.title }}
+
+              </li>
+              <li class="h6 list  d-flex justify-content-between text-white align-items-center">
+                {{ b.competition.name }}
+              </li>
+              <li class="list d-flex  justify-content-between text-white align-items-center">
+                {{date|date:'F d, Y'}}
+              </li>
+            </ul>
+          </a>
+        </div>
+      </div>
+  
+      {% endfor %}
+    </div>
+  
+  </div>
+  
+  
+
+
+
+
+
+
+
+
+<h1 class="display-4 ml-4 mt-5 text-dark text-center">TOP SCORERS <span class="text-secondary">{% now "Y" %}</span></h1>
+<div class="contianer mt-5">
+   <div class="contianer">
+  <!-- Nav pills -->
+ 
+<nav class="navbar navbar-expand-lg navbar-light">
+  <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class=""><img src="https://img.icons8.com/plasticine/50/000000/menu.png"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="nav nav-pills  justify-content-center mt-5">    
+      <li class="nav-item">
+        <button class="btn-hover color-1 active" data-toggle="pill" href="#home">UEFA</button>            
+      </li>
+      <li class="nav-item ml-1">
+        
+        <button class="btn-hover color-3" data-toggle="pill" href="#menu1">LA LIGA</button>
+      </li>
+      <li class="nav-item ml-1">
+        <button class="btn-hover color-4" data-toggle="pill" href="#menu2">EPL</button>
+      </li>
+      <li class="nav-item ml-1">
+        <button class="btn-hover color-5" data-toggle="pill" href="#menu3">SERIE A</button>
+      </li>
+      <li class="nav-item ml-1">
+        <button class="btn-hover color-8" data-toggle="pill" href="#menu4">LIGUE 1</button>
+      </li>
+      <li class="nav-item ml-1">
+        <button class="btn-hover color-11" data-toggle="pill" href="#menu5">BUNDESLIGA</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
   <!-- Tab panes -->
   <div class="tab-content">
     <div class="tab-pane active" id="home">
@@ -399,51 +453,56 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
       </div>
     </div>
 
-  </div>
-
-
-
-</div>
 
 
 
 
+    <div class="tab-pane fade" id="menu5">
 
+      <div class="d-flex overflow-auto scrolling" id="style-1">
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 border-0 cus-bg3 mr-3" style="width: 18rem;">
+            <ul class="list-group card-body ml-3 text-white">
+              <h1 class="h-100 row align-items-center ml-2 text-white">
+                BUNDESLIGA
+              </h1>
+              <h6 class="ml-4">
+                {{ bun.season.startDate  }} <span class="text-dark">/</span> {{ bun.season.endDate  }}
+              </h6>
+            </ul>
+          </div>
+        </div>
+        {% for f in bun.scorers%}
+        <div class="row mt-5">
+          <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
+            <h1 class="ml-4 mt-4 text-dark">
+              <span class="text-white">#{{forloop.counter}} </span> {{ f.player.name }}
+            </h1>
+            <h1 class="ml-4 mt-4 text-white">{{f.numberOfGoals}} Goals 🔥</h1>
+            <h4 class="ml-4 mt-4 text-white"><span class="text-dark">Team </span> {{f.team.name}}</h2>
+          </div>
+        </div>
 
-
-
-
-
-
-<div class="color-2 jumbotron jumbotron-fluid">
-
-  <h1 class="display-4 text-dark text-uppercase text-center">today <span><i class="fas fa-play ml-2"></i></span></h1>
-  <div class="d-flex overflow-auto scrolling" id="style-1">
-    {% for b in bat|slice:'30'%}
-    <div class="row mt-5">
-      <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
-        <a href="{{ b.url }}" target="_blank" class="card-link">
-          <ul class="list-group card-body ml-3">
-            <li class="h2 list d-flex justify-content-between text-uppercase align-items-center text-dark">
-              {{ b.title }}
-
-
-            </li>
-            <li class="h6 list  d-flex justify-content-between text-white align-items-center">
-              {{ b.competition.name }}
-            </li>
-            <li class="list d-flex  justify-content-between text-white align-items-center">
-              {{date|date:'F d, Y'}}
-            </li>
-          </ul>
-        </a>
+        {% endfor %}
       </div>
     </div>
 
-    {% endfor %}
+
+
   </div>
 
+
+
 </div>
+
+
+
+
+
+
+
+
+
 
 
 
