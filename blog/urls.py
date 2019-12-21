@@ -12,7 +12,7 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home-page'),
     path('highlights/', views.frist_home, name='index-home'),
-    path('teams/', views.teams, name='teams'),
+    path('drills/', views.drills, name='drills'),
     # path('posts/', views.myPosts, name='my-posts'),
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
