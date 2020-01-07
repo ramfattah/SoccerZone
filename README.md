@@ -2,7 +2,7 @@
   
 # FootHub
 
-### Watch today's latest international football highlights from every league around the world. 
+### Watch today's latest international football highlights featuring 50+ leagues around the world. 
 
 
 <img src="https://i.ibb.co/BzH097v/Untitled-1.png"> 
