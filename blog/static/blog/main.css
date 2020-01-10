@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Chango&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Exo+2&display=swap");
-
+@import url('https://fonts.googleapis.com/css?family=Ultra&display=swap');
 * {
   font-family: "Paytone One", sans-serif;
 }
@@ -537,7 +537,9 @@ section {
 
 
 
+.navbar-brand{
+  font-family: 'Ultra', serif;
 
-
+}
 
 
