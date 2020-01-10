@@ -1,17 +1,15 @@
 
   
-# FootHub
+# SoccerZone
 
 ### Watch today's latest international football highlights featuring 50+ leagues around the world. 
 
-
-<img src="https://i.ibb.co/BzH097v/Untitled-1.png"> 
 
 
 **This project is built with Django 2.2.6**
 
 You can view a working version of this app
-[here](https://foothubfc.herokuapp.com/)
+[here](https://zonesoccer.herokuapp.com/)
 
 
 ## Get Started
