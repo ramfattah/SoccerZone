@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 import requests
 import dateutil.parser
-
     
 
 def frist_home(request):
@@ -82,24 +81,37 @@ def index(request):
     }
     return render(request, 'blog/index.html', context)
 
-def myPosts(request):
+def posts(request):
+    #football-data PL England
+    PLURL = 'https://api.football-data.org/v2/competitions/2021/standings'
+    pl = requests.get(PLURL, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+    
+    #spain
+    spainurl = 'https://api.football-data.org/v2/competitions/2014/standings'
+    spain = requests.get(spainurl, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+    
+     #football-data api (italy)
+    footUrl = 'https://api.football-data.org/v2/competitions/2019/standings'
+    foot = requests.get(footUrl, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+    
+
     context = {
         'posts': Post.objects.all(),
-        'user': request.user
-    }
-    return render(request, 'blog/myPosts.html', context)
-    
-def drills(request):
+        'user': request.user,
+        'pl' : pl['standings'][0]['table'],
+        'sp' : spain['standings'][0]['table'],
+        'se' : foot['standings'][0]['table']
 
-    return render(request, 'blog/drills.html')
+    }
+    return render(request, 'blog/posts.html', context)
     
+
 
 class PostListView(ListView):
     model = Post
-    template_name = 'blog/home.html'
+    template_name = 'blog/posts.html'
     context_object_name = 'posts'
-    ordering = ['-date_posted']
-    paginate_by = 10
+    paginate_by = 2
 
 
 class UserPostListView(ListView):
@@ -119,16 +131,20 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['content']
+    success_url = '/posts/'
+    paginate_by = 2
+    template_name = 'blog/post_form.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['content']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -143,7 +159,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
-    success_url = '/'
+    success_url = '/posts'
 
     def test_func(self):
         post = self.get_object()
@@ -153,4 +169,4 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 def about(request):
-    return render(request, 'blog/about.html', {'title': 'About'})
+    return render(request, 'blog/about.html',)
