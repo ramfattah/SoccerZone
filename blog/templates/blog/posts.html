@@ -1,22 +1,281 @@
-{% extends "blog/index.html" %}    
-
+{% extends "blog/index.html" %}  {load static}  {% load crispy_forms_tags %}
 {% block content %}
-    
-    <article class="media content-section">
-            <div class="media-body">
-            <div class="article-metadata">
-                <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ object.author }}</a>
-                <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
-                {% if object.author == user  %}
-                    <div>
-                        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
-                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
-                    </div>
+
+
+<style>
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+.btn-hover.color-2 {
+    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+.btn-hover.color-3 {
+    background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
+.btn-hover.color-4 {
+    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+.btn-hover.color-5 {
+    background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+.btn-hover.color-6 {
+    background-image: linear-gradient(to right, #009245, #FCEE21, #00A8C5, #D9E021);
+    box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+}
+.btn-hover.color-7 {
+    background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+.btn-hover.color-8 {
+    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+.btn-hover.color-9 {
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+.btn-hover.color-10 {
+        background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+.btn-hover.color-11 {
+       background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+}
+
+
+</style>
+
+
+
+
+
+
+
+<main role="main " class="container">
+  {% if user.is_authenticated %}
+  <div class="container mt-5">
+    <div class="container justify-content-center">
+      
+      <div class="mx-auto d-flex">
+     
+        <div class="mx-auto d-flex justify-content-center">
+     
+          <a
+=          class="btn-hover color-9 text-white mb-4 d-flex
+          justify-content-center"
+          style="color: inherit;  text-decoration-color: rgba(225, 136, 40, 0);"
+            href="{% url 'post-create' %}"
+            ><h3 class="mt-2">ADD POST</h3></a>
+          
+        </div>
+      </div>
+     
+    </div>
+   
+  </div>
+  {% else %}
+
+    <div class="container">
+      <div class="alert alert-warning alert-dismissible fade show about-text" role="alert">
+       Please Login or Register to add a post.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="button-group text-center mt-5">
+        <button class="btn-sm mt-1 mb-1 btn-hover color-9 text-white mx-auto"><a class="text-white" href="{% url 'login'%}">Login</a></button>
+        <button class="btn-sm mt-1 mb-1 btn-hover color-7 text-white mx-auto"><a class="text-white" href="{% url 'register' %}">Register</a></button>
+    </div>
+    </div>
+  {% endif %}
+  <div class="row mt-5">
+    <div class="col-md-4 container">
+      <div class="content-section shadow container">
+
+        <p class="about-text text-center">Live Standings</p>
+
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active text-dark" id="nav-home-tab"
+            data-toggle="tab" href="#nav-home" role="tab"
+            aria-controls="nav-home" aria-selected="true">
+              EPL</a>
+
+            <a class="nav-item nav-link text-dark" id="nav-profile-tab" data-toggle="tab"
+            href="#nav-profile" role="tab" aria-controls="nav-profile"
+            aria-selected="false">LA LIAG</a>
+
+            <a class="nav-item nav-link text-dark" id="nav-contact-tab" data-toggle="tab"
+            href="#nav-contact" role="tab" aria-controls="nav-contact"
+            aria-selected="false">
+              UEFA</a>
+
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+          aria-labelledby="nav-home-tab">
+
+          <table class="table table-sm about-text container">            
+            <thead>
+              <tr>
+                <th scope="col" class="about-text">Position</th>
+                <th scope="col" class="about-text">Team</th>
+                <th scope="col" class="about-text">Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for p in pl|slice:":10" %}
+                <tr class="about-text">
+                  <th scope="row">{{ p.position}}</th>
+                  <td class="about-text">{{p.team.name}}</td>
+                  <td class="about-text">                
+                    <span class="badge badge-pill badge-warning about-text">{{ p.points }}</span>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+          aria-labelledby="nav-profile-tab">
+
+          
+          <table class="table table-sm about-text container">            
+            <thead>
+              <tr>
+                <th scope="col" class="about-text">Position</th>
+                <th scope="col" class="about-text">Team</th>
+                <th scope="col" class="about-text">Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for p in sp|slice:":10" %}
+                <tr class="about-text">
+                  <th scope="row">{{ p.position}}</th>
+                  <td class="about-text">{{p.team.name}}</td>
+                  <td class="about-text">                
+                    <span class="badge badge-pill badge-info about-text">{{ p.points }}</span>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+
+          </div>
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                     
-                {% endif %}
-            </div>
-            <h2 class="article-title">{{ object.title }}</h2>
-            <p class="article-content">{{ object.content }}</p>
-            </div>
-        </article>
+          <table class="table table-sm about-text container">            
+            <thead>
+              <tr>
+                <th scope="col" class="about-text">Position</th>
+                <th scope="col" class="about-text">Team</th>
+                <th scope="col" class="about-text">Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for p in se|slice:":10" %}
+                <tr class="about-text">
+                  <th scope="row">{{ p.position}}</th>
+                  <td class="about-text">{{p.team.name}}</td>
+                  <td class="about-text">                
+                    <span class="badge badge-pill badge-success about-text">{{ p.points }}</span>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+
+          </div>
+        </div>
+
+
+
+
+
+      <!-- <table class="table table-sm about-text container">
+        <p class=" text-center">EPL Standings</p>
+        
+        <thead>
+          <tr>
+            <th scope="col" class="about-text">Position</th>
+            <th scope="col" class="about-text">Team</th>
+            <th scope="col" class="about-text">Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in pl|slice:":10" %}
+            <tr class="about-text">
+              <th scope="row">{{ p.position}}</th>
+              <td class="about-text">{{p.team.name}}</td>
+              <td class="about-text">                
+                <span class="badge badge-pill badge-info about-text">{{ p.points }}</span>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table> -->
+      </div>
+
+    </div>
+    <div class="col-md-8 ">
+      {% for post in posts reversed %}
+      <article class="media content-section border-rounded shadow card-match2">
+        <div class="media-body container">
+          
+          <h2><a class="article-title" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a></h2>
+          <p class=""><a href="{% url 'post-detail' post.id %}"
+          class="about-text article-title">{{ post.content }}</a> </p>
+          
+        </div>
+        <div class="">
+          <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+        </div>
+      </article>
+  {% endfor %}
+     
+    </div>
+  </div>
+</main>
+
 {% endblock content %}

@@ -70,9 +70,8 @@
     <main>
       
       <nav
-        class="text-sm shadow navbar text-uppercase navbar-expand-md bg-faded justify-content-center" style="background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
-        box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-    "
+        class="text-sm shadow navbar bg-dark text-uppercase navbar-expand-md bg-faded justify-content-center" 
+    
       >
         <a href="{% url 'home-page' %}" class="navbar-brand d-flex text-white w-50 mr-auto"
           >SZ</a
@@ -87,17 +86,23 @@
         </button>
         <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
           <ul class="navbar-nav w-100 justify-content-center">
-              <li class="nav-item">
-                  <a class="nav-link text-white" href="{% url 'index-home' %}">Explore</a>
-                </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="{% url 'posts' %}">Posts</a>
+            </li>
+                    <li class="nav-item">
+                      <div class="container">
+                        <a class="nav-link text-white" href="{% url 'index-home'%}">
+                          Explore 
+                          <span class="badge badge-pill badge-warning">BETA</span>
+                        </a>
+                        
+                      </div>
+                      </li>
 
             <!-- <li class="nav-item">
               <a class="nav-link" href="{% url 'index-home' %}"> Today </a>
             </li> -->
-            
-            <!-- <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'drills' %}">drills</a>
-            </li> -->
+   
             <li class="nav-item">
               <a class="nav-link text-white" href="{% url 'blog-about' %}">About</a>
             </li>
@@ -106,14 +111,17 @@
             {% if user.is_authenticated %}
             <li class="nav-item">
               <!-- <p class="nav-link text-dark">{{user}}</p> -->
-              <div class="dropdown mr-5">
-                <button class="btn btn-secondary dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="container dropdown mr-5">
+                <button class="btn btn-light dropdown-toggle text-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{user}}
                 </button>
-                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-                  <!-- <a class="dropdown-item" href="{% url 'profile' %}">Profile</a> -->
-                  <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                  <!-- <a class="dropdown-item" href="{% url 'settings' %}">settings</a> -->
+                <div class="dropdown-menu shadow border-0"
+                aria-labelledby="dropdownMenuButton">
+                  <small class="about-text">
+                  <a class="dropdown-item" href="{% url 'user-posts' user.username %}">Profile</a>
+                  <a class="dropdown-item" href="{% url 'settings' %}">settings</a>
+                  <a class=" contianer dropdown-item bg-light text-dark" href="{% url 'logout' %}">Logout</a>
+                </small>
                 </div>
               </div>
             </li>
