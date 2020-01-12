@@ -74,7 +74,7 @@
     
       >
         <a href="{% url 'home-page' %}" class="navbar-brand d-flex text-white w-50 mr-auto"
-          >SZ</a
+          style="font-size: xx-large;">SZ</a
         >
         <button
           class="navbar-toggler text-white"
@@ -163,7 +163,8 @@
           </div>
           <div class="col-sm">
             <ul class="list list-unstyled about-text ml-5">
-              <!-- <li class=""><a class="text-white about-text" href="#">Top</a></li> -->
+
+              <p class="text-muted about-text mt-3"> &copy; 2018 - {% now 'Y' %}</p>
             </ul>
           </div>
           <div class="col-sm">
