@@ -151,7 +151,83 @@
           {% block content %}{% endblock %}
         </div>
     </main>
+    <footer class="footer mt-auto py-3 bg-dark" >
+      <div class="container mt-5 mb-3">
+        <div class="row">
+          <div class="col-sm">
+            <ul class="list list-unstyled about-text ml-5">
+              <li class=""><a class="text-white about-text" href="{% url 'blog-about' %}">About</a></li>
+              <li class=""><a class="text-white about-text" href="{% url 'posts' %}">Posts</a></li>
+              <li class=""><a class="text-white about-text" href="{% url 'index-home' %}">Explore</a></li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <ul class="list list-unstyled about-text ml-5">
+              <!-- <li class=""><a class="text-white about-text" href="#">Top</a></li> -->
+            </ul>
+          </div>
+          <div class="col-sm">
+            
+            
+            <!-- Button trigger modal -->
+<div class="text-center">
+  <button
+    type="button"
+    class="btn"
+    data-toggle="modal"
+    data-target="#exampleModal"
+  >
+    <span class="text-white about-text"> Terms Of Use</span>
+  </button>
+</div>
 
+<!-- Modal -->
+<div
+  class="modal fade about-text"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Terms Of Use</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-secondary about-text">
+        Soccer Zone simply acts as a search engine that finds videos from websites
+        like YouTube, DailyMotion, Metacafe and other API consumption. FootHub
+        is not responsible for external websites content. If you find that some
+        of the content violates your rights you may request for that content to
+        be brought down at the host that is responsible for the content.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+          </div>
+        </div>
+        
+        
+      </div>
+    </footer>
 
     <script>
     $("#sidebar-toggle").click(function(e) {
