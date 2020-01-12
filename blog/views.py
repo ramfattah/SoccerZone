@@ -6,8 +6,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 import requests
+
 import dateutil.parser
-    
+
+
+
+
+
+
 
 def frist_home(request):
 
@@ -105,6 +111,8 @@ def posts(request):
     }
     return render(request, 'blog/posts.html', context)
     
+
+
 
 
 class PostListView(ListView):
