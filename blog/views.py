@@ -89,25 +89,15 @@ def index(request):
 
 def posts(request):
     #football-data PL England
-    PLURL = 'https://api.football-data.org/v2/competitions/2021/standings'
-    pl = requests.get(PLURL, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
-    
-    #spain
-    spainurl = 'https://api.football-data.org/v2/competitions/2014/standings'
-    spain = requests.get(spainurl, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
-    
-     #football-data api (italy)
-    footUrl = 'https://api.football-data.org/v2/competitions/2019/standings'
-    foot = requests.get(footUrl, headers={'X-Auth-Token': '92f437c888254340bf5c2094f80cb2a5'}).json()
+    scorebat = 'https://www.scorebat.com/video-api/v1/'
+    sb = requests.get(scorebat).json()
     
 
     context = {
         'posts': Post.objects.all(),
         'user': request.user,
-        'pl' : pl['standings'][0]['table'],
-        'sp' : spain['standings'][0]['table'],
-        'se' : foot['standings'][0]['table']
-
+        'sb' : sb
+       
     }
     return render(request, 'blog/posts.html', context)
     

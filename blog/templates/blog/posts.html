@@ -4,6 +4,31 @@
 
 <style>
 
+.content_img {
+  margin: 1em 0;
+}
+.content_img .img-text {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.65);
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.content_img:hover .img-text {
+  padding: 8px 15px;
+  visibility: visible;
+  opacity: 1;
+  max-width: 80%;
+}
+
+
+
 .btn-hover {
     width: 200px;
     font-size: 16px;
@@ -127,134 +152,19 @@
   {% endif %}
   <div class="row mt-5">
     <div class="col-md-4 container">
-      <div class="content-section shadow container">
-
-        <p class="about-text text-center">Live Standings</p>
-
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active text-dark" id="nav-home-tab"
-            data-toggle="tab" href="#nav-home" role="tab"
-            aria-controls="nav-home" aria-selected="true">
-              EPL</a>
-
-            <a class="nav-item nav-link text-dark" id="nav-profile-tab" data-toggle="tab"
-            href="#nav-profile" role="tab" aria-controls="nav-profile"
-            aria-selected="false">LA LIAG</a>
-
-            <a class="nav-item nav-link text-dark" id="nav-contact-tab" data-toggle="tab"
-            href="#nav-contact" role="tab" aria-controls="nav-contact"
-            aria-selected="false">
-              SERIE A</a>
-
-          </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-          aria-labelledby="nav-home-tab">
-
-          <table class="table table-sm about-text container">            
-            <thead>
-              <tr>
-                <th scope="col" class="about-text">Position</th>
-                <th scope="col" class="about-text">Team</th>
-                <th scope="col" class="about-text">Points</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for p in pl|slice:":10" %}
-                <tr class="about-text">
-                  <th scope="row">{{ p.position}}</th>
-                  <td class="about-text">{{p.team.name}}</td>
-                  <td class="about-text">                
-                    <span class="badge badge-pill badge-warning about-text">{{ p.points }}</span>
-                  </td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-
-        </div>
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-          aria-labelledby="nav-profile-tab">
-
-          
-          <table class="table table-sm about-text container">            
-            <thead>
-              <tr>
-                <th scope="col" class="about-text">Position</th>
-                <th scope="col" class="about-text">Team</th>
-                <th scope="col" class="about-text">Points</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for p in sp|slice:":10" %}
-                <tr class="about-text">
-                  <th scope="row">{{ p.position}}</th>
-                  <td class="about-text">{{p.team.name}}</td>
-                  <td class="about-text">                
-                    <span class="badge badge-pill badge-info about-text">{{ p.points }}</span>
-                  </td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-
-
-          </div>
-          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                    
-          <table class="table table-sm about-text container">            
-            <thead>
-              <tr>
-                <th scope="col" class="about-text">Position</th>
-                <th scope="col" class="about-text">Team</th>
-                <th scope="col" class="about-text">Points</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for p in se|slice:":10" %}
-                <tr class="about-text">
-                  <th scope="row">{{ p.position}}</th>
-                  <td class="about-text">{{p.team.name}}</td>
-                  <td class="about-text">                
-                    <span class="badge badge-pill badge-success about-text">{{ p.points }}</span>
-                  </td>
-                </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-
-
-          </div>
-        </div>
-
-
-
-
-
-      <!-- <table class="table table-sm about-text container">
-        <p class=" text-center">EPL Standings</p>
+      <div class=" ">
+        <h3 class="text-center text-uppercase mb-4">Today's Matches</h3>
+        {% for s in sb|slice:'10' %}
         
-        <thead>
-          <tr>
-            <th scope="col" class="about-text">Position</th>
-            <th scope="col" class="about-text">Team</th>
-            <th scope="col" class="about-text">Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for p in pl|slice:":10" %}
-            <tr class="about-text">
-              <th scope="row">{{ p.position}}</th>
-              <td class="about-text">{{p.team.name}}</td>
-              <td class="about-text">                
-                <span class="badge badge-pill badge-info about-text">{{ p.points }}</span>
-              </td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table> -->
+        <div class="content_img col-xs-6 col-sm-3">
+          <div class="card mb-3 card-match2 shadow rounded" style="width: 18rem;">
+            <img src="{{s.thumbnail}}" class="card-img-top" alt="{{s.title}}" title="{{s.title}}">
+            
+            <div class="img-text about-text"><a href="{{ s.url }}"
+            class="text-white" target="_blank" style="text-decoration: none;">{{s.title}}</a></div>
+          </div>
+        </div>
+        {% endfor %}
       </div>
 
     </div>
