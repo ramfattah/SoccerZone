@@ -1,7 +1,7 @@
 {% extends "blog/index.html" %}    
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="container card shadow content-section">
+    <div class="container card shadow content-section mt-5 mb-5">
         <form action="" method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
@@ -9,11 +9,11 @@
                 <div class="ml-5">{{ form|crispy }}</div>
             </fieldset>
             <div class="form-group ml-5">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                <button class="btn btn-outline-info about-text" type="submit">Sign Up</button>
             </div>
         </form>
         <div class="border-top pt-3 text-center mb-4 ">
-            <small class="text-muted">
+            <small class="text-muted about-text">
                 Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
             </small>
         </div>
