@@ -3,6 +3,22 @@
 
 
 <style>
+  #style-1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  #style-1::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f5f5f5;
+  }
+
+  #style-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+  }
 
 .content_img {
   margin: 1em 0;
@@ -114,6 +130,30 @@
 
 
 <main role="main " class="container">
+  
+
+
+  <div class="color-2 mt-5">
+
+    <h1 class="display-2 text-dark text-uppercase text-center mb-3">today's replay 
+      
+  </h1>
+    <div class="d-flex overflow-auto scrolling" id="style-1">
+      {% for b in sb|slice:'20'%}
+      <div class="row mt-5">
+        <div class="content_img col-xs-6 col-sm-3">
+          <div class="card mb-3 card-match2 shadow rounded mr-3" style="width: 25rem;">
+            {{b.videos.0.embed|safe}}
+                      </div>
+        </div>
+      </div>
+  
+      {% endfor %}
+    </div>
+  
+  </div>
+ 
+
   {% if user.is_authenticated %}
   <div class="container mt-5">
     <div class="container justify-content-center">
@@ -137,38 +177,26 @@
   </div>
   {% else %}
 
-    <div class="container">
-      <div class="alert alert-warning alert-dismissible fade show about-text" role="alert">
-       Please Login or Register to add a post.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+    <div class="container mt-4">
+      
       <div class="button-group text-center mt-5">
         <button class="btn-sm mt-1 mb-1 btn-hover color-9 text-white mx-auto"><a class="text-white" href="{% url 'login'%}">Login</a></button>
         <button class="btn-sm mt-1 mb-1 btn-hover color-7 text-white mx-auto"><a class="text-white" href="{% url 'register' %}">Register</a></button>
     </div>
+    <p class="text-center mt-3 about-text">Please 
+      <a href="{% url 'login' %}">Login</a>   
+      or <a href="{% url 'register' %}">Register</a>    to add a Post.</p>
     </div>
   {% endif %}
-  <div class="row mt-5">
-    <div class="col-md-4 container">
-      <div class=" ">
-        <h3 class="text-center text-uppercase mb-4">Today's Matches</h3>
-        {% for s in sb|slice:'10' %}
-        
-        <div class="content_img col-xs-6 col-sm-3">
-          <div class="card mb-3 card-match2 shadow rounded" style="width: 18rem;">
-            <img src="{{s.thumbnail}}" class="card-img-top" alt="{{s.title}}" title="{{s.title}}">
-            
-            <div class="img-text about-text"><a href="{{ s.url }}"
-            class="text-white" target="_blank" style="text-decoration: none;">{{s.title}}</a></div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
 
-    </div>
-    <div class="col-md-8 ">
+
+
+  <div class="mt-5">
+<br>
+<br>
+
+<br>
+    <div class="">
       {% for post in posts reversed %}
       <article class="media content-section border-rounded shadow card-match2">
         <div class="media-body container">

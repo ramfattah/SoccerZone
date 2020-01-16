@@ -209,40 +209,6 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 </div> -->
 
 
-
-<div class="color-2 mt-5">
-
-    <h1 class="display-4 text-dark text-uppercase text-center mb-5">today's replay 
-      <span>
-        <img src="https://img.icons8.com/cotton/64/000000/tv-show.png">
-    </span>
-  </h1>
-    <div class="d-flex overflow-auto scrolling" id="style-1">
-      {% for b in bat|slice:'30'%}
-      <div class="row mt-5">
-        <div class="card ml-5 mb-5 card-match shadow border-0 bg-info" style="width: 18rem;">
-          <a href="{{ b.url }}" target="_blank" class="card-link">
-            <ul class="list-group card-body ml-3">
-              <li class="h2 list d-flex justify-content-between text-uppercase align-items-center text-dark">
-                {{ b.title }}
-
-              </li>
-              <li class="h6 list  d-flex justify-content-between text-white align-items-center">
-                {{ b.competition.name }}
-              </li>
-              <li class="list d-flex  justify-content-between text-white align-items-center">
-                {{date|date:'F d, Y'}}
-              </li>
-            </ul>
-          </a>
-        </div>
-      </div>
-  
-      {% endfor %}
-    </div>
-  
-  </div>
-  
   
 
 
@@ -252,48 +218,21 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 
 
 
-<h1 class="display-4 ml-4 mt-5 text-dark text-center">TOP SCORERS <span class="text-secondary">{% now "Y" %}</span></h1>
+<h1 class="display-2 ml-4 mt-5 text-dark text-center">TOP SCORERS <span class="text-secondary">{% now "Y" %}</span></h1>
 <div class="contianer mt-5">
    <div class="container">
   <!-- Nav pills -->
 
  
-<nav class="navbar navbar-expand-lg navbar-light">
-  <button class="navbar-toggler mx-auto border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class=""><img src="https://img.icons8.com/color/48/000000/connection-status-off--v1.png"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="nav nav-pills  justify-content-center mt-5">    
-      <li class="nav-item">
-        <button class="btn-hover color-1 active" data-toggle="pill" href="#home">UEFA</button>            
-      </li>
-      <li class="nav-item ml-1">
-        
-        <button class="btn-hover color-3" data-toggle="pill" href="#menu1">LA LIGA</button>
-      </li>
-      <li class="nav-item ml-1">
-        <button class="btn-hover color-4" data-toggle="pill" href="#menu2">EPL</button>
-      </li>
-      <li class="nav-item ml-1">
-        <button class="btn-hover color-5" data-toggle="pill" href="#menu3">SERIE A</button>
-      </li>
-      <li class="nav-item ml-1">
-        <button class="btn-hover color-8" data-toggle="pill" href="#menu4">LIGUE 1</button>
-      </li>
-      <li class="nav-item ml-1">
-        <button class="btn-hover color-11" data-toggle="pill" href="#menu5">BUNDESLIGA</button>
-      </li>
-    </ul>
-  </div>
-</nav>
+
 </div>
   <!-- Tab panes -->
-  <div class="tab-content">
-    <div class="tab-pane active" id="home">
+  <div class="">
+    <div class="" id="">
 
 
 
-      <!-- <h1 class="display-4 ml-4 mt-5 text-dark text-center">{{foot.competition.name}} <span class="text-secondary">{% now "Y" %}</span></h1> -->
+      <h2 class="display-4 ml-4 mt-5 text-dark ">{{foot.competition.name}}</h2>
 
       <div class="d-flex overflow-auto scrolling" id="style-1">
         <div class="row mt-5">
@@ -326,9 +265,14 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 
 
     </div>
-    <div class="tab-pane fade" id="menu1">
-      <!-- <h1 class="display-4 ml-4 mt-5 text-dark text-center">La Liga <span class="text-secondary">{% now "Y" %}</span> </h1> -->
-      <div class="d-flex overflow-auto scrolling" id="style-1">
+
+
+
+
+
+    <!-- La Liga spain -->
+    <h2 class="display-4 ml-4 mt-5 text-dark ">{{spa.competition.name}}</h2>
+          <div class="d-flex overflow-auto scrolling" id="style-1">
         <div class="row mt-5">
           <div class="card ml-5 mb-5 border-0 cus-bg2 mr-3" style="width: 18rem;">
             <ul class="list-group card-body ml-3 text-white">
@@ -358,10 +302,8 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 
 
 
-
-    </div>
-    <div class="tab-pane fade" id="menu2">
-
+            <!-- EPL -->
+      <h2 class="display-4 ml-4 mt-5 text-dark ">{{pl.competition.name}}</h2>
       <div class="d-flex overflow-auto scrolling" id="style-1">
         <div class="row mt-5">
           <div class="card ml-5 mb-5 border-0 cus-bg3  mr-3" style="width: 18rem;">
@@ -389,12 +331,11 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
         {% endfor %}
       </div>
 
-    </div>
 
 
 
-    <div class="tab-pane fade" id="menu3">
-
+        <!-- Italy Serie A -->
+        <h2 class="display-4 ml-4 mt-5 text-dark ">{{sa.competition.name}}</h2>
       <div class="d-flex overflow-auto scrolling" id="style-1">
         <div class="row mt-5">
           <div class="card ml-5 mb-5 border-0 cus-bg1 mr-3" style="width: 18rem;">
@@ -421,11 +362,12 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 
         {% endfor %}
       </div>
-    </div>
 
 
-    <div class="tab-pane fade" id="menu4">
 
+
+      <!-- France Ligue 1 -->
+      <h2 class="display-4 ml-4 mt-5 text-dark ">{{fr.competition.name}}</h2>
       <div class="d-flex overflow-auto scrolling" id="style-1">
         <div class="row mt-5">
           <div class="card ml-5 mb-5 border-0 cus-bg7 mr-3" style="width: 18rem;">
@@ -452,14 +394,13 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 
         {% endfor %}
       </div>
-    </div>
 
 
 
 
 
-    <div class="tab-pane fade" id="menu5">
-
+        <!-- Germany Bun -->
+        <h2 class="display-4 ml-4 mt-5 text-dark ">{{bun.competition.name}}</h2>
       <div class="d-flex overflow-auto scrolling" id="style-1">
         <div class="row mt-5">
           <div class="card ml-5 mb-5 border-0 cus-bg3 mr-3" style="width: 18rem;">
@@ -486,7 +427,6 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
 
         {% endfor %}
       </div>
-    </div>
 
 
 
