@@ -135,16 +135,17 @@
 
   <div class="color-2 mt-5">
 
-    <h1 class="display-2 text-dark text-uppercase text-center mb-3 mt-5">today's replay 
+    <h1 class="display-2 text-dark text-uppercase text-center mb-3">today's Matches 
       
   </h1>
     <div class="d-flex overflow-auto scrolling" id="style-1">
       {% for b in sb|slice:'20'%}
       <div class="row mt-5">
-        <div class="content_img col-xs-6 col-sm-3">
+        <div class="content_img mr-4">
           <div class="card mb-3 card-match2 shadow rounded mr-3" style="width: 28rem;">
             {{b.videos.0.embed|safe}}
-                      </div>
+          </div>
+          <small><p class="text-muted about-text text-center">{{b.title}}</p></small>
         </div>
       </div>
   

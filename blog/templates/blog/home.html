@@ -1,7 +1,9 @@
 {% extends "blog/index.html" %} {% block home %} {% load static %}
 <style>
   
-
+.home-bg{
+    margin-top: 30%;
+}
   .buttons {
       margin: 10%;
       text-align: center;
@@ -86,14 +88,15 @@
 </style>
 
 
-<section class="home-bg">
+<div class="home-bg container">
+
   <div class="bannerText">
     <h2 class="">SoccerZone</h2>
     <br />
     <h3 class="text-secondary">Explore the latest in world of football</h3>
     <!-- <a href="{% url 'index-home' %}" type="button" class="btn btn-light">Explore</a> -->
     <a
-      class="btn-hover color-4 text-white"
+      class="btn-hover color-4 text-white mt-4"
       href="{% url 'posts' %}"
       style="color: inherit;  text-decoration-color: rgba(225, 136, 40, 0);
       
@@ -107,10 +110,11 @@
     <img
       src="{% static 'float.png' %}"
       style="width: 100px; height: 100px;"
+      class="float-right ml-5"
       alt=""
     />
   </div>
-</section>
+</div>
 <br>
 <br>
 <br>
