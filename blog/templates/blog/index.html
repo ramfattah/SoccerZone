@@ -63,6 +63,11 @@
       gtag("config", "UA-150680894-1");
     </script>
 
+<style>
+.bg-light {
+  background-color: #dadcde!important;
+}
+</style>
     
   </head>
 
@@ -70,12 +75,12 @@
     <main>
       
       <nav
-        class="text-sm shadow navbar bg-dark text-uppercase navbar-expand-md bg-faded justify-content-center" 
+        class=" shadow navbar bg-dark text-uppercase navbar-expand-md bg-faded justify-content-center" 
     
       >
-        <a href="{% url 'home-page' %}" class="navbar-brand d-flex text-white w-50 mr-auto"
-          style="font-size: xx-large;">SZ</a
-        >
+      <a href="{% url 'home-page' %}" class="navbar-brand d-flex text-white w-50 mr-auto"
+      style="font-size: xx-large;">SZ</a
+    >
         <button
           class="navbar-toggler text-white"
           type="button"
@@ -98,43 +103,46 @@
                         </a>
                         
                       </div>
-                      </li>
-
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="{% url 'index-home' %}"> Today </a>
-            </li> -->
+                    </li>
    
             <li class="nav-item">
               <a class="nav-link text-white" href="{% url 'blog-about' %}">About</a>
             </li>
           </ul>
           <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-            {% if user.is_authenticated %}
+            
+           
             <li class="nav-item">
-              <!-- <p class="nav-link text-dark">{{user}}</p> -->
-              <div class="container dropdown mr-5">
-                <button class="btn btn-light dropdown-toggle text-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{user}}
-                </button>
-                <div class="dropdown-menu shadow border-0"
-                aria-labelledby="dropdownMenuButton">
-                  <small class="about-text">
-                  <a class="dropdown-item" href="{% url 'user-posts' user.username %}">Profile</a>
-                  <a class="dropdown-item" href="{% url 'settings' %}">settings</a>
-                  <a class=" contianer dropdown-item bg-light text-dark" href="{% url 'logout' %}">Logout</a>
-                </small>
-                </div>
+              <div class="container dropdown float-right mr-4">
+                {% if user.is_authenticated %}
+                  <button class="btn btn-light dropdown-toggle text-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{user}}
+                  </button>
+                  <div class="dropdown-menu shadow border-0"
+                  aria-labelledby="dropdownMenuButton">
+                    <small class="about-text">
+                    <a class="dropdown-item" href="{% url 'user-posts' user.username %}">Profile</a>
+                    <a class="dropdown-item" href="{% url 'settings' %}">settings</a>
+                    <a class=" contianer dropdown-item bg-light text-dark" href="{% url 'logout' %}">Logout</a>
+                  </small>
+                  </div>
+                {% else %}
+                  <button class="btn btn-light dropdown-toggle text-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    WELCOME
+                  </button>
+                  <div class="dropdown-menu shadow border-0"
+                  aria-labelledby="dropdownMenuButton">
+                    <small class="about-text">
+                    <a class="dropdown-item bg-light" href="{% url 'login' %}">Login</a>
+                    <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+                  </small>
+                  </div>
+                {% endif %}
               </div>
             </li>
            
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
-            </li>
-            {% endif %}
+         
+
           </ul>
         </div>
       </nav>
