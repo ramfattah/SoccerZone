@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 import requests
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import dateutil.parser
 
 
@@ -86,13 +86,25 @@ def index(request):
     return render(request, 'blog/index.html', context)
 
 def posts(request):
-    #football-data PL England
+
+    # Posts query-set
+    posts_list = Post.objects.all().order_by("-date_posted")
+
+    #Football highlights api
     scorebat = 'https://www.scorebat.com/video-api/v1/'
     sb = requests.get(scorebat).json()
     
+    paginator = Paginator(posts_list, 15)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
 
     context = {
-        'posts': Post.objects.all(),
+        'posts': posts,
         'user': request.user,
         'sb' : sb
        

@@ -204,7 +204,7 @@
 
 <br>
     <div class="container">
-      {% for post in posts reversed %}
+      {% for post in posts %}
       <article class="media content-section border-rounded shadow card-match2">
         <div class="media-body container">
           
@@ -220,6 +220,32 @@
   {% endfor %}
      
     </div>
+  </div>
+
+
+  <div class="container d-flex justify-content-center mb-4">
+    <div class="pagination mt-4 about-text text-right">
+      <span class="step-links about-text">
+          {% if posts.has_previous %}
+              <a href="?page=1" class="btn btn-outline-dark mb-4">&laquo; first</a>
+              <a href="?page={{ posts.previous_page_number }}" class="btn btn-outline-dark mb-4">previous</a>
+          {% endif %}
+
+          {% for num in posts.paginator.page_range %}
+            {% if posts.number == num %}
+                <a class="btn btn-dark mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > posts.number|add:'-3' and num < posts.number|add:'3' %}
+                <a class="btn btn-outline-dark mb-4" href="?page={{ num }}">{{ num }}</a>
+
+            {% endif %}
+      {% endfor %}
+
+          {% if posts.has_next %}
+              <a href="?page={{ posts.next_page_number }}" class="btn btn-outline-dark mb-4">next</a>
+              <a href="?page={{ posts.paginator.num_pages }}" class="btn btn-outline-dark mb-4">last &raquo;</a>
+          {% endif %}
+      </span>
+  </div>
   </div>
 
 </main>
