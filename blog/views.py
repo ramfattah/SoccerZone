@@ -98,7 +98,6 @@ def posts(request):
        
     }
     return render(request, 'blog/posts.html', context)
-    
 
 
 
@@ -107,7 +106,9 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/posts.html'
     context_object_name = 'posts'
-    paginate_by = 2
+    paginate_by = 10
+
+
 
 
 class UserPostListView(ListView):

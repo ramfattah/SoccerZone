@@ -82,7 +82,7 @@
     <main>
       
       <nav
-        class="navbar bg-transparent navbar-expand-md justify-content-center" 
+        class="navbar bg-white navbar-expand-md justify-content-center" 
     
       >
       <a href="{% url 'home-page' %}" class="navbar-brand d-flex text-dark ml-3 w-50 mr-auto"
@@ -97,7 +97,7 @@
           <span class="navbar-toggler-icon"><i class="fas fa-bars text-dark"></i></span>
         </button>
         <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-          <ul class="navbar-nav w-100 justify-content-center about-text">
+          <ul class="navbar-nav w-100 justify-content-center about-text" style="font-size: 2vh;">
             <li class="hover-li nav-item">
               <a class="nav-link text-dark hover-line" href="{% url 'posts' %}">Explore</a>
             </li>
@@ -117,7 +117,7 @@
           <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
             
            
-            <li class="nav-item">
+            <li class="nav-item" >
               <div class="container dropdown float-right mr-4">
                 {% if user.is_authenticated %}
                   <button class="btn btn-light dropdown-toggle text-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -132,7 +132,7 @@
                   </small>
                   </div>
                 {% else %}
-                  <button class="btn btn-light dropdown-toggle text-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button  class="btn btn-light dropdown-toggle text-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     WELCOME
                   </button>
                   <div class="dropdown-menu shadow border-0"
@@ -165,7 +165,7 @@
           {% block content %}{% endblock %}
         </div>
     </main>
-    <footer class="footer mt-auto py-3 bg-dark" >
+    <footer class="footer mt-auto py-3 bg-dark" style="font-size: 1.5vh;">
       <div class="container mt-5 mb-3">
         <div class="row">
           <div class="col-sm">
