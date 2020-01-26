@@ -28,6 +28,10 @@
       crossorigin="anonymous"
     />
 
+
+    <script data-ad-client="ca-pub-4853008121630059" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
     <script
       src="https://kit.fontawesome.com/282e6ec7ef.js"
       crossorigin="anonymous"
@@ -67,6 +71,9 @@
 .bg-light {
   background-color: #dadcde!important;
 }
+
+
+
 </style>
     
   </head>
@@ -75,11 +82,11 @@
     <main>
       
       <nav
-        class=" shadow navbar bg-dark text-uppercase navbar-expand-md bg-faded justify-content-center" 
+        class="navbar bg-transparent navbar-expand-md justify-content-center" 
     
       >
-      <a href="{% url 'home-page' %}" class="navbar-brand d-flex text-white w-50 mr-auto"
-      style="font-size: xx-large;">SZ</a
+      <a href="{% url 'home-page' %}" class="navbar-brand d-flex text-dark ml-3 w-50 mr-auto"
+      style="font-size: 4vh;">SZ</a
     >
         <button
           class="navbar-toggler text-white"
@@ -87,26 +94,24 @@
           data-toggle="collapse"
           data-target="#collapsingNavbar3"
         >
-          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+          <span class="navbar-toggler-icon"><i class="fas fa-bars text-dark"></i></span>
         </button>
         <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-          <ul class="navbar-nav w-100 justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'posts' %}">EXPLORE</a>
+          <ul class="navbar-nav w-100 justify-content-center about-text">
+            <li class="hover-li nav-item">
+              <a class="nav-link text-dark hover-line" href="{% url 'posts' %}">Explore</a>
             </li>
-                    <li class="nav-item">
-                      <div class="">
-                        <a class="nav-link text-white" href="{% url 'index-home'%}">
+                    <li class="hover-li nav-item">
+                        <a class="nav-link text-dark hover-line" href="{% url 'index-home'%}">
                           Players 
                           <small><span class="badge badge-pill badge-warning">BETA</span></small>
                           
                         </a>
                         
-                      </div>
                     </li>
    
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'blog-about' %}">About</a>
+              <a class="hover-li nav-link text-dark hover-line" href="{% url 'blog-about' %}">About</a>
             </li>
           </ul>
           <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
