@@ -3,17 +3,11 @@
 {% block content %}
 
 <style>
-    body { 
-  background: url('https://wallpaperplay.com/walls/full/e/3/9/130183.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 
 </style>
 
-
+<div class="login-bg">
     <div class="container card shadow content-section mt-5 mb-5">
         <form class="container about-text" action="" method="POST">
             {% csrf_token %}
@@ -32,4 +26,5 @@
             </small>
         </div>
     </div>
+</div>
 {% endblock content %}

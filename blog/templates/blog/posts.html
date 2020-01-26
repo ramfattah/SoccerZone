@@ -3,7 +3,12 @@
 
 
 <style>
-  .matche-cards{
+
+.posts{
+  margin-top: 8%;
+}
+
+  .match-cards{
     margin-left: 1%;
     margin-right: 1%;
   }
@@ -133,14 +138,14 @@
 
 
 
-<main role="main " class="">
+<main role="main " class="posts">
 
   <div class="color-2 mt-5">
 
     <h1 class=" text-dark text-uppercase text-center mb-3" style="font-size: 10vh;">today's Matches 
-      
-  </h1>
-    <div class="matche-cards d-flex overflow-auto scrolling" id="style-1">
+    </h1>
+     <p class="text-center about-text">{% now "jS F Y" %}</p>
+    <div class="match-cards d-flex overflow-auto scrolling" id="style-1">
       {% for b in sb|slice:'20'%}
       <div class="row mt-5">
         <div class="content_img mr-4">
@@ -181,14 +186,13 @@
   {% else %}
 
     <div class="container mt-4">
-      
-      <div class="button-group text-center mt-5">
+      <p class="text-center mt-3 about-text mt-5">Please 
+        <a href="{% url 'login' %}">Login</a>   
+        or <a href="{% url 'register' %}">Register</a>    to add a Post.</p>
+      <div class="button-group text-center ">
         <button class="btn-sm mt-1 mb-1 btn-hover color-9 text-white mx-auto"><a class="text-white" href="{% url 'login'%}">Login</a></button>
         <button class="btn-sm mt-1 mb-1 btn-hover color-7 text-white mx-auto"><a class="text-white" href="{% url 'register' %}">Register</a></button>
     </div>
-    <p class="text-center mt-3 about-text">Please 
-      <a href="{% url 'login' %}">Login</a>   
-      or <a href="{% url 'register' %}">Register</a>    to add a Post.</p>
     </div>
   {% endif %}
 
