@@ -127,7 +127,7 @@ class UserPostListView(ListView):
     model = Post
     template_name = 'blog/user_posts.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
-    paginate_by = 5
+    paginate_by = 15
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
