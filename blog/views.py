@@ -18,6 +18,11 @@ def error_404(request, exception):
 def error_500(request):
     return render(request, 'blog/500.html')
 
+
+
+
+    
+
 def frist_home(request):
 
 
