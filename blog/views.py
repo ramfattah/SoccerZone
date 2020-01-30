@@ -9,9 +9,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import dateutil.parser
 
 import requests
-requests.packages.urllib3.disable_warnings()
 
-from bs4 import BeautifulSoup
 
 def error_404(request, exception):
     return render(request, 'blog/404.html')
