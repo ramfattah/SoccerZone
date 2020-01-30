@@ -9,8 +9,11 @@ from .views import (
     )
 from . import views
 
+
+
 urlpatterns = [
     path('', views.home, name='home-page'),
+    path('scrape/', views.webscrape, name='webscrape'),
     path('highlights/', views.frist_home, name='index-home'),
     path('posts/', views.posts ,name='posts'),
     path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),

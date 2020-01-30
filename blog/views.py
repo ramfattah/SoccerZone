@@ -5,15 +5,20 @@ from .models import Post
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-import requests
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import dateutil.parser
 
+import requests
+requests.packages.urllib3.disable_warnings()
+
+from bs4 import BeautifulSoup
+
+def error_404(request, exception):
+    return render(request, 'blog/404.html')
 
 
-
-
-
+def error_500(request):
+    return render(request, 'blog/500.html')
 
 def frist_home(request):
 
@@ -110,6 +115,31 @@ def posts(request):
        
     }
     return render(request, 'blog/posts.html', context)
+
+def webscrape(request):
+
+    session = requests.Session()
+    session.headers = {
+        "User-Agent":"Mozilla/5.0 (Linux; <Android Version>; <Build Tag etc.>) AppleWebKit/<WebKit Rev> (KHTML, like Gecko) Chrome/<Chrome Rev> Mobile Safari/<WebKit Rev>"
+    }
+
+    url = "https://my.soccerstreams100.tv/"
+    content = session.get(url, verify=False).content
+    
+    soup = BeautifulSoup(content, "html.parser")
+    posts = soup.find_all('div',{'class':'post-inner'})
+
+    for i in posts:
+        link = i.find_all('h2',{'class':'post-title'})
+        home_team = i.find_all('img',{'class':'attachment-boxstyle-list'})
+        print(link)
+        
+
+    context = {
+        'col':link,
+        'ht':home_team
+    }
+    return render(request, 'blog/scrape.html', context)
 
 
 
