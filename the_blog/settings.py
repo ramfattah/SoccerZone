@@ -27,6 +27,7 @@ SECRET_KEY = '3$xfaxzl0gh3l4_tv*r5ujami%m-l0@yo)m6hp2eq3c55c(k-!'
 DEBUG = False 
 
 ALLOWED_HOSTS = [
+    'soccerzn.com',
     'zonesoccer.herokuapp.com',
     '127.0.0.1'
 
