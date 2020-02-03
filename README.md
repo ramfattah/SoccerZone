@@ -2,7 +2,7 @@
   
 # [SoccerZone](https://zonesoccer.herokuapp.com)
 
-### Watch today's latest international football highlights featuring 50+ leagues around the world. 
+### Watch Today's Latest International Football Highlights Featuring 50+ Leagues Around the World. 
 
 
 
