@@ -12,8 +12,11 @@
       name="SoccerZn"
       content="Free Football Soccer Game Stats and Highlights Around the World"
     />
-    <meta name="keywords" content="soccer, highlights, free futbol, free
-    football, free soccer highlights" />
+    <meta
+      name="keywords"
+      content="soccer, highlights, free futbol, free
+    football, free soccer highlights"
+    />
 
     <title>SoccerZn - Explore The Latest in World of Football</title>
     <link
@@ -21,7 +24,7 @@
       type="text/css"
       href="{% static 'blog/main.css' %}"
     />
-    
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -30,15 +33,17 @@
     />
 
     <!-- Your AdSense code -->
-    <script data-ad-client="ca-pub-4853008121630059" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script
+      data-ad-client="ca-pub-4853008121630059"
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    ></script>
 
     <script
       src="https://kit.fontawesome.com/282e6ec7ef.js"
       crossorigin="anonymous"
     ></script>
-    <script
-      src="{% static 'blog/script.js' %}"
-    ></script>
+    <script src="{% static 'blog/script.js' %}"></script>
 
     <!-- scroll bar -->
     <link
@@ -53,206 +58,277 @@
     />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157457149-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-157457149-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'UA-157457149-1');
-</script>
+      gtag("config", "UA-157457149-1");
+    </script>
 
-
-<style>
-.bg-light {
-  background-color: #dadcde!important;
-}
-
-
-
-</style>
-    
+    <style>
+      .bg-light {
+        background-color: #dadcde !important;
+      }
+    </style>
   </head>
 
   <body id="page-top">
     <main>
-      
-      <nav
-        class="navbar bg-white navbar-expand-md justify-content-center" 
-    
-      >
-      <a href="{% url 'home-page' %}" class="navbar-brand d-flex text-dark ml-3 w-50 mr-auto"
-      style="font-size: 4vh;">SZ</a
-    >
+      <nav class="navbar bg-white navbar-expand-md justify-content-center">
+        <a
+          href="{% url 'home-page' %}"
+          class="navbar-brand d-flex text-dark ml-3 w-50 mr-auto"
+          style="font-size: 4vh;"
+          >SZ</a
+        >
         <button
           class="navbar-toggler text-white"
           type="button"
           data-toggle="collapse"
           data-target="#collapsingNavbar3"
         >
-          <span class="navbar-toggler-icon"><i class="fas fa-bars text-dark"></i></span>
+          <span class="navbar-toggler-icon"
+            ><i class="fas fa-bars text-dark"></i
+          ></span>
         </button>
         <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-          <ul class="navbar-nav w-100 justify-content-center about-text" style="font-size: 2vh;">
+          <ul
+            class="navbar-nav w-100 justify-content-center about-text"
+            style="font-size: 2vh;"
+          >
             <li class="hover-li nav-item">
-              <a class="nav-link text-dark hover-line" href="{% url 'posts' %}">Explore</a>
+              <a class="nav-link text-dark hover-line" href="{% url 'posts' %}"
+                >Explore</a
+              >
             </li>
-                    <li class="hover-li nav-item">
-                        <a class="nav-link text-dark hover-line" href="{% url 'index-home'%}">
-                          Players 
-                          <small><span class="badge badge-pill badge-warning">BETA</span></small>
-                          
-                        </a>
-                        
-                    </li>
-   
+            <li class="hover-li nav-item">
+              <a
+                class="nav-link text-dark hover-line"
+                href="{% url 'index-home'%}"
+              >
+                Players
+                <small
+                  ><span class="badge badge-pill badge-warning"
+                    >BETA</span
+                  ></small
+                >
+              </a>
+            </li>
+
             <li class="nav-item">
-              <a class="hover-li nav-link text-dark hover-line" href="{% url 'blog-about' %}">About</a>
+              <a
+                class="hover-li nav-link text-dark hover-line"
+                href="{% url 'blog-about' %}"
+                >About</a
+              >
             </li>
           </ul>
           <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-            
-           
-            <li class="nav-item" >
+            <li class="nav-item">
               <div class="container dropdown float-right mr-4">
                 {% if user.is_authenticated %}
-                  <button class="btn btn-light dropdown-toggle text-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{user}}
-                  </button>
-                  <div class="dropdown-menu shadow border-0"
-                  aria-labelledby="dropdownMenuButton">
-                    <small class="about-text">
-                    <a class="dropdown-item" href="{% url 'user-posts' user.username %}">Profile</a>
-                    <a class="dropdown-item" href="{% url 'settings' %}">settings</a>
-                    <a class=" contianer dropdown-item bg-light text-dark" href="{% url 'logout' %}">Logout</a>
+                <button
+                  class="btn btn-light dropdown-toggle text-dark"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {{user}}
+                </button>
+                <div
+                  class="dropdown-menu shadow border-0"
+                  aria-labelledby="dropdownMenuButton"
+                >
+                  <small class="about-text">
+                    <a
+                      class="dropdown-item"
+                      href="{% url 'user-posts' user.username %}"
+                      >Profile</a
+                    >
+                    <a class="dropdown-item" href="{% url 'settings' %}"
+                      >settings</a
+                    >
+                    <a
+                      class=" contianer dropdown-item bg-light text-dark"
+                      href="{% url 'logout' %}"
+                      >Logout</a
+                    >
                   </small>
-                  </div>
+                </div>
                 {% else %}
-                  <button  class="btn btn-light dropdown-toggle text-dark " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    WELCOME
-                  </button>
-                  <div class="dropdown-menu shadow border-0"
-                  aria-labelledby="dropdownMenuButton">
-                    <small class="about-text">
-                    <a class="dropdown-item bg-light" href="{% url 'login' %}">Login</a>
-                    <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+                <button
+                  class="btn btn-light dropdown-toggle text-dark "
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  WELCOME
+                </button>
+                <div
+                  class="dropdown-menu shadow border-0"
+                  aria-labelledby="dropdownMenuButton"
+                >
+                  <small class="about-text">
+                    <a class="dropdown-item bg-light" href="{% url 'login' %}"
+                      >Login</a
+                    >
+                    <a class="dropdown-item" href="{% url 'register' %}"
+                      >Register</a
+                    >
                   </small>
-                  </div>
+                </div>
                 {% endif %}
               </div>
             </li>
-           
-         
-
           </ul>
         </div>
       </nav>
 
       <!-- Begin Page Content -->
-    
 
       <div class="">
         {% block home %}{% endblock %}
       </div>
 
-      
-
-        <div class="" id="">
-          {% block content %}{% endblock %}
-        </div>
+      <div class="" id="">
+        {% block content %}{% endblock %}
+      </div>
     </main>
-    <footer class="footer mt-auto py-3 bg-dark" style="font-size: 1.5vh;">
+    <footer class="footer mt-auto py-3 bg-dark">
       <div class="container mt-5 mb-3">
         <div class="row">
           <div class="col-sm">
             <ul class="list list-unstyled about-text ml-5">
-              <li class=""><a class="text-white about-text" href="{% url 'blog-about' %}">About</a></li>
-              <li class=""><a class="text-white about-text" href="{% url 'posts' %}">Posts</a></li>
-              <li class=""><a class="text-white about-text" href="{% url 'index-home' %}">Explore</a></li>
+              <li class="">
+                <a class="text-white about-text" href="{% url 'blog-about' %}"
+                  >About</a
+                >
+              </li>
+              <li class="">
+                <a class="text-white about-text" href="{% url 'posts' %}"
+                  >Posts</a
+                >
+              </li>
+              <li class="">
+                <a class="text-white about-text" href="{% url 'index-home' %}"
+                  >Explore</a
+                >
+              </li>
+              <li class="">
+                <a class="text-white about-text" 
+                href="https://app.termly.io/document/privacy-policy/4ea8faaa-a1d4-48cb-a232-7df3233a6e8d"
+                target="_blank"
+                  >Privacy Policy</a
+                >
+              </li>
             </ul>
           </div>
           <div class="col-sm">
             <ul class="list list-unstyled about-text ml-5">
-
-              <p class="text-muted about-text mt-3"> &copy; 2019 - {% now 'Y' %}</p>
+              <p class="text-muted about-text mt-3">
+                &copy; 2019 - {% now 'Y' %}
+              </p>
             </ul>
           </div>
           <div class="col-sm">
-            
-           
             <!-- Button trigger modal -->
-<div class="text-center">
-  <button
-    type="button"
-    class="btn"
-    data-toggle="modal"
-    data-target="#exampleModal"
-  >
-    <span class="text-white about-text"> Terms Of Use</span>
-  </button>
-</div>
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >
+                <span class="text-white about-text"> Terms Of Use</span>
+              </button>
+            </div>
 
-<!-- Modal -->
-<div
-  class="modal fade about-text"
-  id="exampleModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Terms Of Use</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body text-secondary about-text">
-        SoccerZone simply acts as a search engine that finds videos from websites
-        like YouTube, DailyMotion, Metacafe and other API consumption. SoccerZone
-        is not responsible for external websites content. If you find that some
-        of the content violates your rights you may request for that content to
-        be brought down at the host that is responsible for the content.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-  
-</div>
-
-<div class="container text-center">
-  <a href="https://twitter.com/SoccerZn_?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @SoccerZn_</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-
-
+            <!-- Modal -->
+            <div
+              class="modal fade about-text"
+              id="exampleModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Terms Of Use
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-secondary about-text">
+                    SoccerZone simply acts as a search engine that finds videos
+                    from websites like YouTube, DailyMotion, Metacafe and other
+                    API consumption. SoccerZone is not responsible for external
+                    websites content. If you find that some of the content
+                    violates your rights you may request for that content to be
+                    brought down at the host that is responsible for the
+                    content.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="container text-center">
+              <a
+                href="https://twitter.com/SoccerZn_?ref_src=twsrc%5Etfw"
+                class="twitter-follow-button"
+                data-show-count="false"
+                >Follow @SoccerZn_</a
+              >
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"
+              ></script>
+            </div>
           </div>
         </div>
-        
-        
       </div>
     </footer>
 
     <script>
-    $("#sidebar-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+      $("#sidebar-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
     </script>
     <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
 
     <!-- scroll bar -->
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
