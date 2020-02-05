@@ -119,30 +119,8 @@ def posts(request):
     }
     return render(request, 'blog/posts.html', context)
 
-def webscrape(request):
-
-    session = requests.Session()
-    session.headers = {
-        "User-Agent":"Mozilla/5.0 (Linux; <Android Version>; <Build Tag etc.>) AppleWebKit/<WebKit Rev> (KHTML, like Gecko) Chrome/<Chrome Rev> Mobile Safari/<WebKit Rev>"
-    }
-
-    url = "https://my.soccerstreams100.tv/"
-    content = session.get(url, verify=False).content
-    
-    soup = BeautifulSoup(content, "html.parser")
-    posts = soup.find_all('div',{'class':'post-inner'})
-
-    for i in posts:
-        link = i.find_all('h2',{'class':'post-title'})
-        home_team = i.find_all('img',{'class':'attachment-boxstyle-list'})
-        print(link)
-        
-
-    context = {
-        'col':link,
-        'ht':home_team
-    }
-    return render(request, 'blog/scrape.html', context)
+def privacy(request):
+    return render(request, 'blog/privacy.html')
 
 
 
