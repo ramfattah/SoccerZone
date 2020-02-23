@@ -14,7 +14,7 @@ You can view a working version of this app
 
 ## Get Started
 
-It is best to use the python `virtualenv` tool to build locally:
+It is best to use the virtual environment `virtualenv` to build locally:
 
 ### Install Virtualenv
 
